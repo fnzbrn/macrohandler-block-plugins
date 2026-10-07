@@ -1,0 +1,16 @@
+{
+  "format": "macrohandler.block",
+  "schemaVersion": 2,
+  "id": "com.macrohandler.agent_routine",
+  "version": "1.0.0",
+  "name": "My Agent Routine",
+  "description": "Adds the complete existing Agent card, including Teach and Routine sections. Approved local plans, ownership checks and run consent are still required; no trained routine or approval is bundled.",
+  "author": "MacroHandler",
+  "inputs": [],
+  "code": "",
+  "native": {
+    "entry": "agent_routine",
+    "apiVersion": 1,
+    "source": "app/src/main/java/com/macrohandler/app/data/codegen/AgentMacroBlockGenerator.kt"
+  }
+}

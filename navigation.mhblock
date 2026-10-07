@@ -1,0 +1,16 @@
+{
+  "format": "macrohandler.block",
+  "schemaVersion": 2,
+  "id": "com.macrohandler.navigation",
+  "version": "1.0.0",
+  "name": "Navigation",
+  "description": "Adds the complete existing Navigation editor and Stop navigation helper. Configure a macro-local profile, map, route and feedback before use.",
+  "author": "MacroHandler",
+  "inputs": [],
+  "code": "",
+  "native": {
+    "entry": "navigation",
+    "apiVersion": 1,
+    "source": "app/src/main/java/com/macrohandler/app/data/navigation/NavigationBlockHandler.kt"
+  }
+}

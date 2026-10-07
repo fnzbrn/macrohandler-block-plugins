@@ -1,0 +1,16 @@
+{
+  "format": "macrohandler.block",
+  "schemaVersion": 2,
+  "id": "com.macrohandler.agent_detect",
+  "version": "1.0.0",
+  "name": "Agent Detect",
+  "description": "Adds the existing reference detection editor, FOUND / NOT FOUND / ERROR branches and typed outputs. Add and review macro-local references before use.",
+  "author": "MacroHandler",
+  "inputs": [],
+  "code": "",
+  "native": {
+    "entry": "agent_detect",
+    "apiVersion": 1,
+    "source": "app/src/main/java/com/macrohandler/app/data/codegen/AgentDetectGenerator.kt"
+  }
+}

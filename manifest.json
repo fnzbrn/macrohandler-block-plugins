@@ -1,0 +1,32 @@
+{
+  "assets": [
+    {
+      "bytes": 528,
+      "id": "com.macrohandler.navigation",
+      "apiVersion": 1,
+      "file": "navigation.mhblock",
+      "entry": "navigation",
+      "sha256": "647dd452aeb7f7176e3df94d6541cd78f1bab36ccbdeb232ce0f0eac239da3b3"
+    },
+    {
+      "bytes": 537,
+      "id": "com.macrohandler.agent_detect",
+      "apiVersion": 1,
+      "file": "agent_detect.mhblock",
+      "entry": "agent_detect",
+      "sha256": "50bd72a87f4c5a264b733606006dfcf133553bd245b132ab546a98967e016b6d"
+    },
+    {
+      "bytes": 592,
+      "id": "com.macrohandler.agent_routine",
+      "apiVersion": 1,
+      "file": "agent_routine.mhblock",
+      "entry": "agent_routine",
+      "sha256": "4abac7dd5e923d90c7c95eb473a84da386950ccb65847bf1ee94adbb1f784de7"
+    }
+  ],
+  "schemaVersion": 2,
+  "compatibility": "Requires native block package API 1; marketing version 1.0.51 alone is insufficient.",
+  "nativeApiVersion": 1,
+  "version": "1.0.0"
+}
