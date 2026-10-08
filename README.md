@@ -76,3 +76,12 @@ Website community features require the reviewed website/backend rollout and offi
 ## License
 
 The package descriptors and documentation in this distribution are MIT licensed; see `LICENSE`. This license does **not** grant rights to Macro Handler's Android application, native engines, user data, game assets or third-party content. It does not change the application's terms or membership requirements.
+
+## Individual plugin guides
+
+Each guide explains the purpose, requirements and import steps, and includes the versioned file download.
+
+- [Navigation](docs/navigation.md)
+- [Navigation Stop](docs/navigation-stop.md)
+- [Agent Detect](docs/agent-detect.md)
+- [Agent Routine](docs/agent-routine.md)
