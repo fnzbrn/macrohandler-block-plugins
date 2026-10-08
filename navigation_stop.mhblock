@@ -1,0 +1,16 @@
+{
+  "format": "macrohandler.block",
+  "schemaVersion": 2,
+  "id": "com.macrohandler.navigation_stop",
+  "version": "1.1.0",
+  "name": "Navigation Stop",
+  "description": "Adds the existing Stop navigation block. Stops the active navigation owned by the current macro and requires confirmed joystick release; it does not stop other macros or replace the global Stop control.",
+  "author": "MacroHandler",
+  "inputs": [],
+  "code": "",
+  "native": {
+    "entry": "navigation_stop",
+    "apiVersion": 1,
+    "source": "app/src/main/java/com/macrohandler/app/data/navigation/NavigationStopBlockHandler.kt"
+  }
+}

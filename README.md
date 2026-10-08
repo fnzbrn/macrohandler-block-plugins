@@ -12,13 +12,16 @@ These small `.mhblock` files add optional entries to the app's **Plugins** libra
 
 | Download block | Editor | Setup guide |
 | --- | --- | --- |
-| [navigation.mhblock](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/v1.0.0/navigation.mhblock) | Navigation and Stop navigation helper | [Navigation](https://macrohandler.com/docs/visual-guide/navigation) |
-| [agent_detect.mhblock](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/v1.0.0/agent_detect.mhblock) | Agent Detect | [Agent Detect](https://macrohandler.com/docs/visual-guide/agent_detect) |
-| [agent_routine.mhblock](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/v1.0.0/agent_routine.mhblock) | Agent, including Teach and Routine sections | [Agent](https://macrohandler.com/docs/visual-guide/agent) |
+| [navigation.mhblock](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/v1.1.0/navigation.mhblock) | Navigation | [Navigation](https://macrohandler.com/docs/visual-guide/navigation) |
+| [navigation_stop.mhblock](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/v1.1.0/navigation_stop.mhblock) | Navigation Stop (Navigasyon Kır) | [Navigation Stop](https://macrohandler.com/docs/visual-guide/navigation_stop) |
+| [agent_detect.mhblock](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/v1.1.0/agent_detect.mhblock) | Agent Detect | [Agent Detect](https://macrohandler.com/docs/visual-guide/agent_detect) |
+| [agent_routine.mhblock](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/v1.1.0/agent_routine.mhblock) | Agent, including Teach and Routine sections | [Agent](https://macrohandler.com/docs/visual-guide/agent) |
 
-[Download all three packages as a ZIP](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/v1.0.0/macrohandler-block-plugins-1.0.0.zip), then extract it to import the individual `.mhblock` files. Downloads are hosted by GitHub; setup guides are on the Macro Handler website.
+[Download all four packages as a ZIP](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/v1.1.0/macrohandler-block-plugins-1.1.0.zip), then extract it to import the individual `.mhblock` files. Downloads are hosted by GitHub; setup guides are on the Macro Handler website.
 
 **Navigation** lets you configure the existing route and joystick controls. Create your own macro-local profile, map, route and feedback, and test a short route first. It does not include a universal route for arbitrary games.
+
+**Navigation Stop** adds the existing `NAVIGATION_STOP` block independently. It stops only the active navigation owned by the current macro and checks that the joystick was released. If release cannot be confirmed, execution reports `NAVIGATION_RELEASE_UNCONFIRMED`. It is not the application's global Stop control.
 
 **Agent Detect** uses the existing region and taught-target detection controls. Teach and review your own targets, narrow the search region and verify detection on your screen. No pretrained target, recognition guarantee or permission is bundled.
 
@@ -26,7 +29,7 @@ These small `.mhblock` files add optional entries to the app's **Plugins** libra
 
 ## Requirements
 
-- A Macro Handler build with **native block packages schema 2 / API 1** support. The release target is 1.0.51, but **earlier 1.0.51 builds do not support these descriptors**. Version text alone is not a compatibility check.
+- A Macro Handler build with **native block packages schema 2 / API 1** support and the four-entry catalog introduced for package release **1.1.0**. The release target is 1.0.51, but **earlier 1.0.51 builds do not support every descriptor**. Version text alone is not a compatibility check.
 - Android permissions and any membership or consent requirements for the actions you configure.
 - Your own route, references and reviewed Agent routine where required. These files do not provide those user assets.
 
@@ -38,24 +41,31 @@ The default add-block palette omits these optional entries. Existing macros with
 2. Open your macro in the Visual or Logic workspace.
 3. In the **Add Block** palette, choose **Import block (.mhblock)**.
 4. Review the package name, ID and version, then confirm the import.
-5. Open **Plugins**, select the imported entry and add it to your macro. Navigation also provides its Stop navigation helper.
+5. Open **Plugins**, select the imported entry and add it to your macro. Import Navigation Stop separately if your macro needs it.
 6. Configure the real block card and test in a controlled setup before running a full macro.
 
 Imported entries can be searched and favorited. Removing a library version does not delete blocks already added to a macro. The macro stores the descriptor and native settings; a compatible receiving app does not need a separate library import to open the block. Engine behavior follows the installed app version.
 
 ## Package format and integrity
 
-Package version: **1.0.0**. Format: UTF-8 JSON, `format: "macrohandler.block"`, `schemaVersion: 2`, empty `code`, empty `inputs`, and a native descriptor with `apiVersion: 1`.
+Package version: **1.1.0**. Format: UTF-8 JSON, `format: "macrohandler.block"`, `schemaVersion: 2`, empty `code`, empty `inputs`, and a native descriptor with `apiVersion: 1`.
 
 Only the following entry/ID pairs are supported:
 
 | Entry | Package ID |
 | --- | --- |
 | `navigation` | `com.macrohandler.navigation` |
+| `navigation_stop` | `com.macrohandler.navigation_stop` |
 | `agent_detect` | `com.macrohandler.agent_detect` |
 | `agent_routine` | `com.macrohandler.agent_routine` |
 
-There is no APK, DEX, JAR, shared library, model download, arbitrary native class or executable payload in these three packages. The `author` and `source` fields are descriptive metadata, **not a cryptographic publisher signature**. Download from the publisher's verified release and compare the file digest with `SHA256SUMS` if needed. The checksum is public integrity information, not a secret or access credential.
+There is no APK, DEX, JAR, shared library, model download, arbitrary native class or executable payload in these four packages. The `author` and `source` fields are descriptive metadata, **not a cryptographic publisher signature**. Download from the publisher's verified release and compare the file digest with `SHA256SUMS` if needed. The checksum is public integrity information, not a secret or access credential.
+
+## Updates and older versions
+
+Each release has its own GitHub tag, immutable download URLs, manifest and SHA-256 checksums. [Browse all releases](https://github.com/fnzbrn/macrohandler-block-plugins/releases) to download a specific version. Updating the library never silently rewrites blocks already stored in a macro; add or replace a block explicitly when you want a new package descriptor.
+
+Version **1.0.0** remains available. Its Navigation package includes the original Stop helper, and the updated app preserves that exact legacy behavior. In **1.1.0**, Navigation and Navigation Stop are separate imports. Versions can coexist in the library; the same package ID and version cannot be overwritten with different content. Package versions describe library entries; the installed app supplies the actual engine and its compatibility and permission checks.
 
 ## Community and support
 

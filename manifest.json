@@ -1,32 +1,40 @@
 {
+  "version": "1.1.0",
+  "schemaVersion": 2,
+  "nativeApiVersion": 1,
+  "compatibility": "Requires the four-entry native block package catalog introduced for package release 1.1.0. Marketing app version 1.0.51 alone is insufficient. Exact Navigation package 1.0.0 retains its legacy Stop helper.",
   "assets": [
     {
-      "bytes": 528,
-      "id": "com.macrohandler.navigation",
-      "apiVersion": 1,
       "file": "navigation.mhblock",
+      "id": "com.macrohandler.navigation",
       "entry": "navigation",
-      "sha256": "647dd452aeb7f7176e3df94d6541cd78f1bab36ccbdeb232ce0f0eac239da3b3"
+      "apiVersion": 1,
+      "bytes": 548,
+      "sha256": "77d1d5b204e796ce11b4f553470005e2d0db43297c4a6afbd14ae13c926e59e6"
     },
     {
-      "bytes": 537,
-      "id": "com.macrohandler.agent_detect",
+      "file": "navigation_stop.mhblock",
+      "id": "com.macrohandler.navigation_stop",
+      "entry": "navigation_stop",
       "apiVersion": 1,
+      "bytes": 608,
+      "sha256": "e763bc4845a223d10b96ef03ad0ec54effd488533ff56f509b3c7dde2f6d1c0b"
+    },
+    {
       "file": "agent_detect.mhblock",
+      "id": "com.macrohandler.agent_detect",
       "entry": "agent_detect",
-      "sha256": "50bd72a87f4c5a264b733606006dfcf133553bd245b132ab546a98967e016b6d"
+      "apiVersion": 1,
+      "bytes": 537,
+      "sha256": "db27db1ca03e2f539b6e97c12ffe8e2ccb8bd1221630c8469a7389716111744f"
     },
     {
-      "bytes": 592,
-      "id": "com.macrohandler.agent_routine",
-      "apiVersion": 1,
       "file": "agent_routine.mhblock",
+      "id": "com.macrohandler.agent_routine",
       "entry": "agent_routine",
-      "sha256": "4abac7dd5e923d90c7c95eb473a84da386950ccb65847bf1ee94adbb1f784de7"
+      "apiVersion": 1,
+      "bytes": 592,
+      "sha256": "904659a11caeed1df42c122c58bec9e892c9c526529fa85c9140f7b54c5c059a"
     }
-  ],
-  "schemaVersion": 2,
-  "compatibility": "Requires native block package API 1; marketing version 1.0.51 alone is insufficient.",
-  "nativeApiVersion": 1,
-  "version": "1.0.0"
+  ]
 }
