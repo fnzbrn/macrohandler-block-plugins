@@ -56,6 +56,14 @@ In VS Code, the included `.vscode/settings.json` associates `.mhblock` files wit
 
 For external files, use **Add block → Import → Plugins**, inspect the package and confirm installation. Then add it from the Plugins palette. Configured instances keep their embedded definition and settings; library updates do not silently rewrite existing macros.
 
+### Built-in starters and configured workflows
+
+The updated 1.0.51 author fills the actual content workspace between its rails and bars in both orientations. **Built-in blocks** provides 14 editable Lua starters: Wait, Log, Clipboard read/write, Random number, key-value read/write, Toast, File read/write/delete, JSON parse, Date/time and String trim. The app uses its production block generator for their behavior. Edit the defaults, confirm **Use this starter**, then customize the Lua, properties, icon, tabs and settings actions. Confirmation replaces this draft's code/properties/appearance while retaining an existing draft ID and version. Built-in blocks themselves are never modified.
+
+**Copy current workspace** captures the complete active No-Code or Logic document as a Lua starting point without changing the original document or leaving an open Logic group. The outer macro loop and startup dialog are omitted; internal loops remain. Empty, invalid and oversized workflows are rejected. File/image/device references are not bundled or relocated, so review them on the destination device. This provides editable generated Lua, not Android editor/engine source.
+
+Property preview can be used before the ID or Lua is finished; installation and export still validate a complete package. Preview and starter selection never run code. The main author draft survives a workspace surface rebuild; unconfirmed sub-page edits are discarded. Closing the author/session discards unsaved changes. This UI requires the updated reader build; an app's version label alone does not prove support.
+
 ## Designing a complex scenario
 
 Separate the task into local helpers and bounded stages. Use groups for related settings, basic fields for common controls, advanced fields for tuning, and descriptive help/units. Validate cancellation and error results from runtime dialogs and workflows. Obtain the user's real reference plane, regions and image assets; examples must not guess touch targets.

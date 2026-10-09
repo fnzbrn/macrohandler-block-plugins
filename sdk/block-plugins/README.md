@@ -27,6 +27,14 @@ Successful output says `structuralValidation: passed` and `androidCompilerValida
 
 An installed ID + version has immutable content: use **Edit a new version** and bump the version for changes. A library update/removal does not alter the frozen copies already embedded in macros. These author controls require a build containing the schema 3 authoring UI; do not assume an older installed reader has them.
 
+### Start from built-in behavior
+
+In the updated 1.0.51 author, **Built-in blocks** offers 14 editable Lua starters: Wait, Log, Clipboard read/write, Random number, key-value read/write, Toast, File read/write/delete, JSON parse, Date/time and String trim. Their Lua is produced by the app's actual block generator. Adjust the starter defaults, then explicitly choose **Use this starter**. This replaces this draft's code, properties and appearance; it never changes a built-in block or executes code. An existing draft ID and version are retained. Add properties, edit Lua, choose an icon/image and configure tabs/settings actions as usual.
+
+**Copy current workspace** captures the active No-Code or Logic document, including configured blocks and code-generation context, as an editable Lua starting point. The outer macro loop and startup dialog are removed so one plugin invocation runs the copied sequence once; loops inside the sequence remain. The original macro and Logic group scope are not changed. Empty/invalid or oversized snapshots are rejected. File/image/device references are not embedded or relocated; review those references on the target device. This is generated Lua, not editable Android widget source or a native engine extension.
+
+The author fills the measured content workspace between the rails/bars in both orientations. Property preview works before package identity or Lua is complete and never executes the draft. Saving/exporting still requires a complete valid package. A surface rebuild restores the main detached author draft; unconfirmed sub-page edits are discarded. Closing the author or ending its session discards unsaved work.
+
 ## Format
 
 Required root properties: `format: "macrohandler.block"`, `schemaVersion`, `id`, `version`, `name`, `code`. Optional: `description`, `author`, `inputs`, `native`, `form`, `presentation`. Unknown properties, duplicate JSON keys (including escaped duplicates), invalid UTF-8, trailing data and JSON comments are rejected. One leading UTF-8 BOM is accepted for reader compatibility; the packer emits none. Do not put `$schema` inside a package. VS Code association is in the included `.vscode/settings.json`.
