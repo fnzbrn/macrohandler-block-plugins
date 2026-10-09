@@ -1,0 +1,13 @@
+{
+  "files.associations": {
+    "*.mhblock": "json"
+  },
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "**/*.mhblock"
+      ],
+      "url": "./block-plugin.schema.json"
+    }
+  ]
+}

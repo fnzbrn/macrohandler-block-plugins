@@ -1,0 +1,23 @@
+{
+  "format": "macrohandler.block",
+  "schemaVersion": 3,
+  "id": "example.form_workflow",
+  "version": "1.0.0",
+  "name": "Form and bounded workflow",
+  "description": "Shows a runtime form, then calculates and prints local results. No file, network or screen actions.",
+  "inputs": [
+    {
+      "key": "title",
+      "label": "Dialog title",
+      "type": "text",
+      "defaultValue": "Local calculation",
+      "required": true,
+      "help": "This is editor metadata; Form.show below creates the separate runtime dialog."
+    }
+  ],
+  "presentation": {
+    "category": "Examples",
+    "icon": "data"
+  },
+  "code": "local function runExample()\n    local values = Form.show({\n        title = inputs.title, positive = \"Run\", negative = \"Cancel\", timeoutMs = 60000,\n        fields = {\n            {type = \"input\", key = \"_demo_label\", label = \"Result label\", value = \"Result\", required = true},\n            {type = \"slider\", key = \"_demo_count\", label = \"Count\", min = 1, max = 10, value = 3},\n            {type = \"checkbox\", key = \"_demo_run\", label = \"Run local calculation\", value = false}\n        }\n    })\n    if values == nil or values._demo_run ~= true then return end\n    local count = tonumber(values._demo_count)\n    if not count or count % 1 ~= 0 or count < 1 or count > 10 then error(\"Invalid count\") end\n    local result = Workflow.times(count, function(index)\n        local attempt = Workflow.retry(function(number)\n            if number == 1 then return false end\n            return true, index * index\n        end, {maxAttempts = 2, delayMs = 50, maxDelayMs = 50, timeoutMs = 1000})\n        if not attempt.ok then error(attempt.reason) end\n        print(values._demo_label .. \": \" .. tostring(attempt.values[2]))\n    end, {intervalMs = 100, timeoutMs = 10000})\n    if not result.ok then error(result.reason) end\nend\nrunExample()"
+}

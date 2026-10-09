@@ -77,6 +77,16 @@ Website community features require the reviewed website/backend rollout and offi
 
 The package descriptors and documentation in this distribution are MIT licensed; see `LICENSE`. This license does **not** grant rights to Macro Handler's Android application, native engines, user data, game assets or third-party content. It does not change the application's terms or membership requirements.
 
+## Create and distribute your own blocks
+
+The public **Block Authoring SDK** supports Lua packages with typed editable properties, native form groups, help/units and semantic icons for both No-Code and Logic workspaces. Read the English guides before downloading the versioned assets:
+
+- [SDK ZIP, capabilities, installation and development](docs/block-authoring-sdk.md)
+- [JSON schema, VS Code setup and validation limits](docs/block-json-schema.md)
+- [AI authoring brief and verified generation workflow](docs/block-ai-authoring.md)
+
+SDK releases use separate `sdk-v...` tags. The four official native packages keep their existing `v...` release line. Schema-3 Lua authoring requires a reader build supporting it; arbitrary HTML/DEX/native widget loading is not a plugin capability. The SDK is MIT licensed under its included scope and does not distribute the application runtime.
+
 ## Individual plugin guides
 
 Each guide explains the purpose, requirements and import steps, and includes the versioned file download.

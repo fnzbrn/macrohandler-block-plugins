@@ -1,0 +1,8 @@
+{
+  "format": "macrohandler.block",
+  "schemaVersion": 3,
+  "id": "example.scope_end_name",
+  "version": "1.0.0",
+  "name": "Case-sensitive scope fixture",
+  "code": "local End = 7\nprint(End)"
+}

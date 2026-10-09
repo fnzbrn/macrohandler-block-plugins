@@ -1,0 +1,108 @@
+{
+  "format": "macrohandler.block",
+  "schemaVersion": 3,
+  "id": "example.configurable_workflow",
+  "version": "1.0.0",
+  "name": "Configurable local workflow",
+  "description": "Eight editor input types, a runtime confirmation form, a macro-local module and bounded arithmetic. No screen actions, files, network or asset dependencies.",
+  "inputs": [
+    {
+      "key": "title",
+      "label": "Title",
+      "type": "text",
+      "defaultValue": "Local calculation",
+      "required": true,
+      "group": "display",
+      "help": "Editor title; reused by the separate runtime form."
+    },
+    {
+      "key": "iterations",
+      "label": "Iterations",
+      "type": "number",
+      "defaultValue": "3",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "group": "work"
+    },
+    {
+      "key": "askConfirmation",
+      "label": "Show runtime confirmation",
+      "type": "boolean",
+      "defaultValue": "true",
+      "group": "display",
+      "help": "The optional form is an example UI, not a permission or safety gate."
+    },
+    {
+      "key": "operation",
+      "label": "Calculation",
+      "type": "choice",
+      "choices": [
+        "square",
+        "double"
+      ],
+      "defaultValue": "square",
+      "group": "work"
+    },
+    {
+      "key": "accent",
+      "label": "Runtime checkbox color",
+      "type": "color",
+      "defaultValue": "#3388CC",
+      "group": "display"
+    },
+    {
+      "key": "resultName",
+      "label": "Explicit Lua-global result",
+      "type": "variable",
+      "defaultValue": "ExampleWorkflowResult",
+      "group": "output",
+      "advanced": true,
+      "help": "An explicit shared Lua global, not a No-Code output port. Stop may leave a pending result."
+    },
+    {
+      "key": "referencePoint",
+      "label": "Reference point (diagnostic only)",
+      "type": "point",
+      "defaultValue": "0,0",
+      "group": "reference",
+      "advanced": true,
+      "help": "Read-only sample origin, not an invented touch target. Use your actual macro reference plane."
+    },
+    {
+      "key": "referenceRegion",
+      "label": "Reference region (diagnostic only)",
+      "type": "region",
+      "defaultValue": "0,0,0,0",
+      "group": "reference",
+      "advanced": true,
+      "help": "Full-area sentinel; dimensions are printed only. No capture or search."
+    }
+  ],
+  "form": {
+    "layout": "sections",
+    "groups": [
+      {
+        "id": "display",
+        "label": "Display"
+      },
+      {
+        "id": "work",
+        "label": "Bounded work"
+      },
+      {
+        "id": "output",
+        "label": "Result"
+      },
+      {
+        "id": "reference",
+        "label": "Read-only reference"
+      }
+    ]
+  },
+  "presentation": {
+    "category": "Examples",
+    "icon": "flow"
+  },
+  "code": "local function runExample()\n    local moduleName = \"example.configurable_workflow.v1\"\n    if not Module.has(moduleName) then\n        Module.define(moduleName, function()\n            return {calculate = function(index, operation)\n                if operation == \"square\" then return index * index end\n                if operation == \"double\" then return index * 2 end\n                error(\"Unsupported calculation\")\n            end}\n        end)\n    end\n    local calculator = Module.use(moduleName)\n    local label, count = inputs.title, inputs.iterations\n    _G[inputs.resultName] = {ok = false, reason = \"pending\"}\n    if inputs.askConfirmation then\n        local schema = {\n            title = inputs.title, positive = \"Run\", negative = \"Cancel\", timeoutMs = 60000,\n            surface = {mode = \"auto\", widthDp = 0, heightDp = 0, style = \"rounded\"},\n            fields = {{type = \"tabs\", key = \"_sdk_page\", selected = 1, pages = {\n                {label = \"Run\", fields = {\n                    {type = \"input\", key = \"_sdk_label\", label = \"Result label\", value = inputs.title, required = true},\n                    {type = \"slider\", key = \"_sdk_count\", label = \"Iterations\", min = 1, max = 10, value = inputs.iterations},\n                    {type = \"checkbox\", key = \"_sdk_confirm\", label = \"Run local calculation\", value = false,\n                        style = {selectionColor = inputs.accent, controlStyle = \"classic\"}}\n                }},\n                {label = \"About\", fields = {\n                    {type = \"text\", value = \"Local arithmetic only. No touch, search, file or network actions.\"}\n                }}\n            }}}\n        }\n        local valid, detail = Form.validate(schema)\n        if not valid then error(detail) end\n        local values = Form.show(schema)\n        if values == nil or values._sdk_confirm ~= true then\n            _G[inputs.resultName] = {ok = false, reason = \"cancelled\"}\n            return\n        end\n        label, count = values._sdk_label, tonumber(values._sdk_count)\n    end\n    if type(label) ~= \"string\" or not label:match(\"%S\") then error(\"Missing result label\") end\n    if not count or count % 1 ~= 0 or count < 1 or count > 10 then error(\"Invalid iteration count\") end\n    -- These typed reference-plane values are read only, never passed to touch/search APIs.\n    print(\"Reference point: \" .. tostring(inputs.referencePoint:getX()) .. \",\" .. tostring(inputs.referencePoint:getY()))\n    print(\"Reference region: \" .. tostring(inputs.referenceRegion:getW()) .. \"x\" .. tostring(inputs.referenceRegion:getH()))\n    local results = {}\n    local outcome = Workflow.times(count, function(index)\n        local attempt = Workflow.retry(function(number)\n            if number == 1 then return false end\n            return true, calculator.calculate(index, inputs.operation)\n        end, {maxAttempts = 2, delayMs = 50, backoff = 1, maxDelayMs = 50, timeoutMs = 1000})\n        if not attempt.ok then error(attempt.reason) end\n        results[#results + 1] = attempt.values[2]\n        print(label .. \": \" .. tostring(attempt.values[2]))\n    end, {intervalMs = 100, timeoutMs = 10000})\n    _G[inputs.resultName] = {ok = outcome.ok, reason = outcome.reason, results = results}\n    if not outcome.ok then error(outcome.reason) end\nend\nrunExample()"
+}

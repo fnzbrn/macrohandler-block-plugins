@@ -1,0 +1,122 @@
+{
+  "format": "macrohandler-public-block-sdk-v1",
+  "release": "sdk-v1.0.0",
+  "compatibleReader": "prepared 1.0.51 (65), schema 3 support required",
+  "schemaVersions": [
+    1,
+    2,
+    3
+  ],
+  "androidValidationRequired": true,
+  "files": [
+    {
+      "path": "sdk/block-plugins/README.md",
+      "sha256": "c68c7a7b120e2f7afdfe9d730511b8b7e12fe1588dad96cc3cb1ec212848a58c"
+    },
+    {
+      "path": "sdk/block-plugins/AI_AUTHORING_BRIEF.md",
+      "sha256": "e281a53a677ec4b92fe6166d23912508a4f02969781b485a765a2d4c8a49b27c"
+    },
+    {
+      "path": "sdk/block-plugins/LICENSE",
+      "sha256": "3ba492fd3db917d7e4767c28b772d542032aa09822383860607c005354025de6"
+    },
+    {
+      "path": "sdk/block-plugins/PUBLIC_PACKAGE_LICENSE.txt",
+      "sha256": "283255321111fde8aed81f8ae9d7964ee5cfbd9870320c44a1721b08059471ed"
+    },
+    {
+      "path": "sdk/block-plugins/NOTICE.txt",
+      "sha256": "112a7ac260e1232d3337385fdd383c597a0a12c0d3b7342fb9223b0fa76446b1"
+    },
+    {
+      "path": "sdk/block-plugins/block-plugin.schema.json",
+      "sha256": "653dbb61785897826d31f2a4d3257637d4f24e470f35a0d79608c35281b8e4a2"
+    },
+    {
+      "path": "sdk/block-plugins/.vscode/settings.json",
+      "sha256": "187612133f171465e199d783d3a342f8d73f7d916028abfcb34a9547409e02df"
+    },
+    {
+      "path": "sdk/block-plugins/mhblock.mjs",
+      "sha256": "66c140b0bc8d4d5c9854ead1a9bd23a0b390bae09f55a367959ff3c8f52f6ab2"
+    },
+    {
+      "path": "sdk/block-plugins/package.mjs",
+      "sha256": "72d898b73a1106f954f0c2848703238446689d1e37c982810d9497b7b265e0a0"
+    },
+    {
+      "path": "sdk/block-plugins/package.d.mts",
+      "sha256": "fbfb2c27ef8d703dc59dc9a02b3c7c6d3847ebb63bcaa9d21894f9add827b57e"
+    },
+    {
+      "path": "sdk/block-plugins/strict-json.mjs",
+      "sha256": "d6acfa1c09e1700efd6f54f7d29132e64e6a248c270cecfc310a64897460d55e"
+    },
+    {
+      "path": "sdk/block-plugins/reserved-variables.mjs",
+      "sha256": "78ebe16c811987b701bfbb81a831b84e9ccfb6cade2a08eb1ea724fb6b027244"
+    },
+    {
+      "path": "sdk/block-plugins/build-schema.mjs",
+      "sha256": "de3f2fe9d039a5d7cd06c4944fd9c5ad87f69e128abb78001c4e8d26039d034c"
+    },
+    {
+      "path": "sdk/block-plugins/lua-policy.mjs",
+      "sha256": "3d4567f562c3dddad9a8ed64d017da19a50d4063d4f61e9a0cefb89d2e744fb3"
+    },
+    {
+      "path": "sdk/block-plugins/test/package.test.mjs",
+      "sha256": "c17e187aba166b45cca71104eb84a05c7d700eb54aee5296608f2d8128496099"
+    },
+    {
+      "path": "sdk/block-plugins/test/definitions.mts",
+      "sha256": "01b1790d85eb39d77e92b0bfe67d327b6f95c5e76d7b631496d64d64e772a006"
+    },
+    {
+      "path": "sdk/block-plugins/examples/repeated-log.mhblock",
+      "sha256": "406855d5dfdf6c22a710682ee17a100ebca6764013be10efd6c267d0219608df"
+    },
+    {
+      "path": "sdk/block-plugins/examples/bounded-wait.mhblock",
+      "sha256": "e74ff78b7275e56c1c1311516e9e316f25eca3cae503ac7bc679e5078a957526"
+    },
+    {
+      "path": "sdk/block-plugins/examples/form-workflow.mhblock",
+      "sha256": "322c21cb1223fae971e20c66d2136734831fce7177d60b565fa69b84f375d7bf"
+    },
+    {
+      "path": "sdk/block-plugins/examples/configurable-workflow.mhblock",
+      "sha256": "3b6d36a7492622805a6bae662228bfa3e760d18b101f69da51070a9ef623b77a"
+    },
+    {
+      "path": "sdk/block-plugins/test/fixtures/scope-function-escape.mhblock",
+      "sha256": "0e4e05b478f2cd49b60a1853ff273c56e0e71321f282a9587c1922b2f311f728"
+    },
+    {
+      "path": "sdk/block-plugins/test/fixtures/scope-end-name.mhblock",
+      "sha256": "1f1a29b3d47dcaf1a9bdcc2f38ba3a20b38db916b347bde70b879c390626d8b1"
+    },
+    {
+      "path": "sdk/block-plugins/test/fixtures/scope-return-name.mhblock",
+      "sha256": "666c1d4cbd3d1d5a83f9533402444e820e8012f8c76385957f11cc0dc48fccbc"
+    }
+  ],
+  "assets": [
+    {
+      "file": "block-plugin-sdk.zip",
+      "bytes": 34799,
+      "sha256": "c9f6a5bffd4ee0c58e15a1242cb2652f1a9555c996fcab4c4ddb9ce91c0bf1da"
+    },
+    {
+      "file": "block-plugin.schema.json",
+      "bytes": 9864,
+      "sha256": "653dbb61785897826d31f2a4d3257637d4f24e470f35a0d79608c35281b8e4a2"
+    },
+    {
+      "file": "block-plugin-ai-brief.txt",
+      "bytes": 4252,
+      "sha256": "e281a53a677ec4b92fe6166d23912508a4f02969781b485a765a2d4c8a49b27c"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "format": "macrohandler.block",
+  "schemaVersion": 3,
+  "id": "example.bounded_wait",
+  "version": "1.0.0",
+  "name": "Bounded wait",
+  "description": "Editor form metadata configures a bounded wait and an explicit Lua global result.",
+  "inputs": [
+    {
+      "key": "delayMs",
+      "label": "Delay",
+      "type": "number",
+      "defaultValue": "250",
+      "min": 0,
+      "max": 5000,
+      "step": 50,
+      "unit": "ms",
+      "group": "timing",
+      "help": "Duration in milliseconds."
+    },
+    {
+      "key": "resultName",
+      "label": "Lua global name",
+      "type": "variable",
+      "defaultValue": "ExampleWaitCompleted",
+      "advanced": true,
+      "group": "timing",
+      "help": "An explicit Lua global, not a No-Code local output port."
+    }
+  ],
+  "form": {
+    "layout": "sections",
+    "groups": [
+      {
+        "id": "timing",
+        "label": "Timing"
+      }
+    ]
+  },
+  "presentation": {
+    "category": "Utilities",
+    "icon": "flow"
+  },
+  "code": "wait(inputs.delayMs)\n_G[inputs.resultName] = true\nprint(\"Bounded wait completed\")"
+}

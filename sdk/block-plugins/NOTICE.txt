@@ -1,0 +1,12 @@
+Macro Handler block SDK — source distribution notice
+
+The LICENSE file applies only to this first-party SDK tooling, schema, examples
+and documentation. The Android application, runtime, native engines, private
+assets and third-party content are not included or relicensed. No third-party
+executable libraries are bundled. PUBLIC_PACKAGE_LICENSE.txt preserves the
+existing license notice for official package descriptors and public docs.
+
+API/format compatibility is documented from application interfaces. This SDK
+is not the Android compiler, interpreter or a copy of the Android application.
+No publication, Play approval, runtime verification or author authentication
+is implied by the presence of these files. Validate imported packages in the app.

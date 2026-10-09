@@ -1,0 +1,24 @@
+{
+  "format": "macrohandler.block",
+  "schemaVersion": 1,
+  "id": "example.repeated_log",
+  "version": "1.0.0",
+  "name": "Repeated log",
+  "description": "A bounded console-only block. No screen or network actions.",
+  "author": "SDK example",
+  "inputs": [
+    {
+      "key": "message",
+      "label": "Message",
+      "type": "text",
+      "defaultValue": "Hello"
+    },
+    {
+      "key": "count",
+      "label": "Count (1–10)",
+      "type": "number",
+      "defaultValue": "3"
+    }
+  ],
+  "code": "local count = inputs.count\nif count % 1 ~= 0 or count < 1 or count > 10 then error(\"Count must be an integer from 1 to 10\") end\nfor index = 1, count do\n    print(inputs.message .. \" / \" .. index)\n    wait(100)\nend"
+}
