@@ -1,6 +1,6 @@
 # Macro Handler block authoring SDK
 
-Author a `.mhblock` UTF-8 JSON package for the existing No-Code and Logic block library. This source SDK targets readers with schema 3 support in the prepared 1.0.51 code line. Version text alone is not proof that an older installed 1.0.51 build supports schema 3. Schema 1 Lua and schema 2 official native descriptors remain supported separately.
+Author a `.mhblock` UTF-8 JSON package for the existing No-Code and Logic block library. This source SDK targets readers with schema 4 design support in the prepared 1.0.51 code line. Version text alone is not proof that an older installed 1.0.51 build supports schema 4. Schemas 1–3 remain supported. Schema 1 Lua and schema 2 official native descriptors remain supported separately.
 
 Requires Node.js 20+; no dependency installation, network, account or API key. From this extracted directory:
 
@@ -35,7 +35,7 @@ Required root properties: `format: "macrohandler.block"`, `schemaVersion`, `id`,
 | --- | --- |
 | Entire file | 256 KiB UTF-8, including JSON overhead |
 | Schema 1 code | 131,072 UTF-16 code units, historical contract |
-| Schema 3 code | 131,072 UTF-8 bytes, also bounded by the file |
+| Schema 3–4 code | 131,072 UTF-8 bytes, also bounded by the file |
 | JSON | Maximum depth 8 (root 0), 4,096 value nodes; names do not count as value nodes |
 | ID | Dotted lowercase identifier, max 96 UTF-16 units; e.g. `example.my_block` |
 | Version | Three numeric components of 1–5 digits; optional 1–32 ASCII alphanumeric/dot/hyphen prerelease |
@@ -70,6 +70,27 @@ Optional input metadata: `help` (1,024, newline/tab allowed), `unit` (24, no con
 
 `form: {"layout":"sections","groups":[{"id":"timing","label":"Timing","help":"..."}]}` supports up to 8 unique groups. Input group IDs must exist. `stack` has no groups. `presentation` optionally contains `category` (nonblank 80) and `icon` from `block`, `code`, `search`, `touch`, `flow`, `data`. These are declarative editor hints, not HTML, custom widgets or executable UI callbacks.
 
+### Schema 4: custom native presentation
+
+Requires a reader build with schema 4 support (prepared 1.0.51); older builds reject it. Existing schema 1–3 readers/bytes are unchanged. Name, description, category, input labels/help/units, bounds and basic/advanced fields remain configurable. Choose **Choose icon image** in the app author: a local PNG/JPEG up to 8 MiB is reduced to at most 256 pixels per edge and normalized to a metadata-free PNG within 32 KiB. The image is embedded in `presentation.iconPng` as canonical base64. No image URL is fetched. It appears in the plugin palette, No-Code card and Logic live/overview cards. `presentation.icon` is a bundled fallback.
+
+The wire icon must contain only IHDR/IDAT/IEND, 8-bit RGB or RGBA, no interlace, correct checksums, and no trailing content. The SDK checks chunks/dimensions/checksums; Android additionally decompresses a bounded pixel stream and checks scanline filters. This difference is intentional: the portable synchronous browser validator is a preflight. The Android importer remains authoritative. Use the app converter rather than manually encoding arbitrary images.
+
+`form.layout` accepts `stack`, `sections` and **`tabs`**. Groups are ordered tabs (up to eight); ungrouped fields get a General tab. Advanced fields remain under the shared Advanced control. Tab selection stays intact after a preset. Native fields retain keyboard, accessibility names, 48dp minimum targets and the host theme. Plugin authors control content and arrangement; they do not inject Android views or a separate HTML/CSS renderer.
+
+`form.actions` accepts up to eight buttons, each with a unique identifier, a label (80 characters), optional plain-text help (1024) and bundled `icon`. Two kinds:
+
+```json
+{"id":"quick","label":"Quick profile","kind":"preset","values":{"count":"2","enabled":"true"},"icon":"flow"}
+{"id":"restore","label":"Restore defaults","kind":"reset"}
+```
+
+A preset needs at least one existing input key and string value. All values must satisfy the input types, required text, choices and bounds. The entire candidate compiles before one settings/persistence commit; invalid/stale actions leave the block unchanged. Reset has no values and restores every declared default. Neither kind executes Lua, touches the screen, starts a macro or calls a provider. Presets do not discard invalid drafts in unrelated fields; correct the highlighted field or explicitly reset. Workspace reference migration also updates point/region presets.
+
+Open **Design layout and buttons** in the in-app author to edit the strict form JSON. This is the form object (layout/groups/actions), not a whole package. Use **Preview properties** to try the result without saving or running the open macro. Install/export requires a valid whole package and an explicit action. For complex behavior, read the selected values in the normal Lua block body and use the actual APIs. Runtime forms (`Form.show`) remain independent of these editor buttons.
+
+Start with `examples/designed-counter.mhblock`: embedded icon, Work/Output tabs, Quick/Detailed profiles, reset, a bounded arithmetic loop and an explicit result global. It is offline and performs no user-screen actions. Default count 3 yields total 6; Quick count 2 yields total 3 **when the macro is explicitly run**. This source description is not proof of arbitrary third-party automation.
+
 ## Examples and real APIs
 
 - `examples/repeated-log.mhblock`: legacy bounded loop with `print` and `wait`; no user-screen actions.
@@ -81,7 +102,7 @@ For the configurable example, keep **Show runtime confirmation** enabled for the
 
 Module names are shared within a macro run. The example uses a versioned name and `Module.has` before `Module.define`, so repeated block invocations do not redefine it. Keep a unique module name for a different implementation; do not reuse a name with conflicting code. `Workflow.retry` accepts a truthy first callback result; additional results remain in `.values` (the sample's calculation is `.values[2]`). `Workflow.times` treats a literal `false` first return as a normal early break, while an ordinary nil return continues. A host stop escapes the existing runtime guard; user cleanup callbacks are not guaranteed after it.
 
-The six `presentation.icon` values are bundled choices. Custom image/icon files, downloaded fonts, arbitrary HTML/CSS and executable editor callbacks are not package capabilities. Complex runtime forms can use only the fields/styles implemented by `Form`, independently of schema-3 editor metadata. Lua is case-sensitive: `Function`, `End` and `Return` are identifiers, not scope keywords; they cannot grant a top-level return permission.
+The six `presentation.icon` values are bundled choices. Schema 4 additionally supports an embedded custom PNG as documented below. Downloaded fonts, arbitrary HTML/CSS and executable editor callbacks are not package capabilities. Complex runtime forms can use only the fields/styles implemented by `Form`, independently of schema-3 editor metadata. Lua is case-sensitive: `Function`, `End` and `Return` are identifiers, not scope keywords; they cannot grant a top-level return permission.
 
 `Form`, `Workflow`, `Module` and `Api` are actual registered namespaces in this source line. `Module.define/use` is local to the macro, not an external package manager. Use the app's API reference for exact argument/return contracts. Generic Lua examples from another assistant may use unsupported APIs. Loops/actions should be bounded; never fabricate assets, coordinates or execution evidence. Library removal does not revoke definitions already frozen into existing macro blocks. ID + version content is immutable in the library: bump the package version after edits.
 

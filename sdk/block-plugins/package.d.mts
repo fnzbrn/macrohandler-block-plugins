@@ -67,6 +67,11 @@ export type LegacyBlockPluginInput = WithoutAdvanced<LegacyInput>
 export interface BlockPluginGroup { id: string; label: string; help?: string | null }
 export type BlockPluginForm = { layout?: 'stack'; groups?: [] } | { layout: 'sections'; groups?: BlockPluginGroup[] }
 export interface BlockPluginPresentation { category?: string | null; icon?: BlockPluginIcon | null }
+export type BlockPluginAction = { id: string; label: string; help?: string | null; icon?: BlockPluginIcon | null } & (
+  { kind?: 'preset'; values: Record<string, string> } | { kind: 'reset'; values?: Record<string, never> }
+)
+export type RichBlockPluginForm = ({ layout?: 'stack'; groups?: [] } | { layout: 'sections' | 'tabs'; groups?: BlockPluginGroup[] }) & { actions?: BlockPluginAction[] }
+export interface RichBlockPluginPresentation extends BlockPluginPresentation { iconPng?: string | null }
 interface PackageIdentity {
   format: 'macrohandler.block'
   /** Lowercase dotted identifier, up to 96 characters. */
@@ -105,7 +110,12 @@ export type NativeBlockPlugin = {
     presentation?: null
   }
 }[NativeBlockPluginEntry]
-export type BlockPluginPackage = LegacyLuaBlockPlugin | AdvancedLuaBlockPlugin | NativeBlockPlugin
+export interface RichLuaBlockPlugin extends Omit<AdvancedLuaBlockPlugin, 'schemaVersion' | 'form' | 'presentation'> {
+  schemaVersion: 4
+  form?: RichBlockPluginForm | null
+  presentation?: RichBlockPluginPresentation | null
+}
+export type BlockPluginPackage = LegacyLuaBlockPlugin | AdvancedLuaBlockPlugin | RichLuaBlockPlugin | NativeBlockPlugin
 /** Identity fields are not needed by the standalone value validator. */
 export type BlockPluginInputValueSpec = BlockPluginInput extends infer T
   ? T extends BlockPluginInput ? Omit<T, keyof InputIdentity | 'defaultValue'> : never : never

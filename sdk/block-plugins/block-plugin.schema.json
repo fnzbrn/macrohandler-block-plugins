@@ -12,7 +12,8 @@
       "enum": [
         1,
         2,
-        3
+        3,
+        4
       ]
     },
     "id": {
@@ -91,7 +92,8 @@
             "layout": {
               "enum": [
                 "stack",
-                "sections"
+                "sections",
+                "tabs"
               ],
               "default": "stack"
             },
@@ -115,6 +117,72 @@
                       {
                         "type": "string",
                         "maxLength": 1024
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "id",
+                  "label"
+                ]
+              },
+              "maxItems": 8
+            },
+            "actions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z][A-Za-z0-9_]{0,47}$"
+                  },
+                  "label": {
+                    "type": "string",
+                    "maxLength": 80,
+                    "minLength": 1
+                  },
+                  "kind": {
+                    "enum": [
+                      "preset",
+                      "reset"
+                    ],
+                    "default": "preset"
+                  },
+                  "values": {
+                    "type": "object",
+                    "maxProperties": 24,
+                    "additionalProperties": {
+                      "type": "string",
+                      "maxLength": 8192
+                    }
+                  },
+                  "help": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 1024
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "icon": {
+                    "anyOf": [
+                      {
+                        "enum": [
+                          "block",
+                          "code",
+                          "search",
+                          "touch",
+                          "flow",
+                          "data"
+                        ]
                       },
                       {
                         "type": "null"
@@ -166,6 +234,18 @@
                     "flow",
                     "data"
                   ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "iconPng": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 43692,
+                  "description": "Canonical base64 static PNG, 32 KiB, 1-256 px per edge. Run SDK and Android validators."
                 },
                 {
                   "type": "null"
@@ -364,6 +444,43 @@
     }
   },
   "allOf": [
+    {
+      "if": {
+        "properties": {
+          "schemaVersion": {
+            "enum": [
+              1,
+              2,
+              3
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "form": {
+            "properties": {
+              "layout": {
+                "enum": [
+                  "stack",
+                  "sections"
+                ]
+              },
+              "actions": {
+                "maxItems": 0
+              }
+            }
+          },
+          "presentation": {
+            "properties": {
+              "iconPng": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      }
+    },
     {
       "if": {
         "properties": {

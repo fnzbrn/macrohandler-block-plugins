@@ -11,11 +11,29 @@ const example = async name => readPackage(await readFile(new URL(`../examples/${
 const minimal = () => ({ format: 'macrohandler.block', schemaVersion: 1, id: 'test.block', version: '1.0.0', name: 'Demo', code: 'print("hello")' })
 
 test('all examples validate and repeated SDK packing is byte-identical', async () => {
-  for (const name of ['repeated-log', 'bounded-wait', 'form-workflow', 'configurable-workflow']) {
+  for (const name of ['repeated-log', 'bounded-wait', 'form-workflow', 'configurable-workflow', 'designed-counter']) {
     const first = encodePackage(await example(name)), second = encodePackage(readPackage(first))
     assert.deepEqual(first, second)
     assert.equal(first[0], 123); assert.equal(first.at(-1), 125)
   }
+})
+
+test('schema4 native design round trip retains icon tabs and typed atomic presets', async () => {
+  const source = await example('designed-counter')
+  assert.equal(source.schemaVersion, 4)
+  assert.equal(source.form.layout, 'tabs')
+  assert.equal(source.form.actions[0].values.count, '2')
+  assert.equal(source.form.actions.at(-1).kind, 'reset')
+  assert.ok(source.presentation.iconPng.length > 20)
+  assert.deepEqual(readPackage(encodePackage(source)), readPackage(encodePackage(readPackage(encodePackage(source)))))
+  for (const version of [1, 2, 3]) assert.throws(() => validatePackage({ ...source, schemaVersion: version }))
+  for (const action of [{id:'x',label:'X',values:{missing:'1'}}, {id:'x',label:'X',values:{count:'11'}}, {id:'x',label:'X',values:{enabled:'yes'}}, {id:'x',label:'X',kind:'run',values:{}}, {id:'x',label:'X',kind:'reset',values:{count:'2'}}]) {
+    assert.throws(() => validatePackage({ ...source, form: { ...source.form, actions: [action] } }))
+  }
+  for (const iconPng of ['https://example.test/a.png', 'data:image/png;base64,'+source.presentation.iconPng, source.presentation.iconPng+'\n', source.presentation.iconPng.slice(0,-4)]) {
+    assert.throws(() => validatePackage({ ...source, presentation: { ...source.presentation, iconPng } }))
+  }
+  assert.throws(() => validatePackage({ ...source, form: { ...source.form, actions: Array(9).fill(source.form.actions[0]) } }))
 })
 test('strict UTF8 rejects malformed bytes; one UTF8 BOM remains compatible', () => {
   assert.throws(() => readPackage(Uint8Array.of(0xc3, 0x28)))

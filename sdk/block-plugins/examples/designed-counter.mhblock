@@ -1,0 +1,97 @@
+{
+  "format": "macrohandler.block",
+  "schemaVersion": 4,
+  "id": "example.designed_counter",
+  "version": "1.0.0",
+  "name": "Designed counter",
+  "description": "Offline native editor demo: embedded icon, tabbed controls and atomic presets. Prints a bounded arithmetic result; no screen actions.",
+  "author": "Macro Handler SDK",
+  "inputs": [
+    {
+      "key": "count",
+      "label": "Iterations",
+      "type": "number",
+      "defaultValue": "3",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "group": "work"
+    },
+    {
+      "key": "enabled",
+      "label": "Calculate",
+      "type": "boolean",
+      "defaultValue": "true",
+      "group": "work"
+    },
+    {
+      "key": "message",
+      "label": "Output label",
+      "defaultValue": "Result",
+      "group": "output",
+      "help": "Plain data, not executable Lua."
+    },
+    {
+      "key": "verbose",
+      "label": "Show each value",
+      "type": "boolean",
+      "defaultValue": "false",
+      "advanced": true,
+      "group": "output"
+    },
+    {
+      "key": "resultName",
+      "label": "Result global",
+      "type": "variable",
+      "defaultValue": "pluginDesignResult",
+      "group": "output"
+    }
+  ],
+  "form": {
+    "layout": "tabs",
+    "groups": [
+      {
+        "id": "work",
+        "label": "Work",
+        "help": "Bounded local calculation."
+      },
+      {
+        "id": "output",
+        "label": "Output"
+      }
+    ],
+    "actions": [
+      {
+        "id": "quick",
+        "label": "Quick profile",
+        "values": {
+          "count": "2",
+          "enabled": "true"
+        },
+        "icon": "flow",
+        "help": "Applies two values together; does not run the block."
+      },
+      {
+        "id": "detailed",
+        "label": "Detailed profile",
+        "values": {
+          "count": "8",
+          "verbose": "true"
+        },
+        "icon": "data"
+      },
+      {
+        "id": "restore",
+        "label": "Restore defaults",
+        "kind": "reset",
+        "icon": "block"
+      }
+    ]
+  },
+  "presentation": {
+    "category": "Developer examples",
+    "icon": "data",
+    "iconPng": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAI0lEQVR4nGPQmHbnv8YJICaTZqBEM4hmGHXBqAtGXTBIXAAAjRiyH1BKd1wAAAAASUVORK5CYII="
+  },
+  "code": "local total = 0\nif inputs.enabled then\n  for i = 1, inputs.count do\n    total = total + i\n    if inputs.verbose then print(inputs.message, i, total) end\n  end\nend\n_G[inputs.resultName] = {total = total, label = inputs.message}\nprint(inputs.message, total)"
+}

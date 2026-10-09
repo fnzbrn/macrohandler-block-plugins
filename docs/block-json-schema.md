@@ -1,15 +1,15 @@
 # Macro Handler block JSON schema
 
-The JSON schema assists editors in authoring `.mhblock` packages. It describes the actual schema-1 legacy Lua, schema-2 official native descriptor and schema-3 advanced Lua form contracts. It is **not** a compiler, a sandbox, an installation command or a certification of arbitrary code.
+The JSON schema assists editors in authoring `.mhblock` packages. It describes the actual schema-1 legacy Lua, schema-2 official native descriptors, schema-3 advanced Lua forms and schema-4 visual control contracts. It is **not** a compiler, a sandbox, an installation command or a certification of arbitrary code.
 
 ## Review, then download
 
-- [Download block-plugin.schema.json — sdk-v1.0.0](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/sdk-v1.0.0/block-plugin.schema.json)
+- [Download block-plugin.schema.json — sdk-v1.1.0](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/sdk-v1.1.0/block-plugin.schema.json)
 - [Inspect the schema before downloading](../sdk/block-plugins/block-plugin.schema.json)
 - [Full SDK installation and development guide](block-authoring-sdk.md)
-- [Versioned release and checksums](https://github.com/fnzbrn/macrohandler-block-plugins/releases/tag/sdk-v1.0.0)
+- [Versioned release and checksums](https://github.com/fnzbrn/macrohandler-block-plugins/releases/tag/sdk-v1.1.0)
 
-This schema targets the prepared Macro Handler 1.0.51 (65) reader contract. Version text alone does not establish that an older installed build includes schema 3.
+This schema targets the prepared Macro Handler 1.0.51 (65) reader contract. Version text alone does not establish that an older installed build includes schema 4.
 
 ## VS Code configuration
 
@@ -31,7 +31,7 @@ Use a local file for offline validation and reproducible authoring. Do **not** i
 - Required format identity, schema version, ID, semantic version, name and Lua code.
 - Schema-specific optional fields, typed property definitions and defaults.
 - Choice arrays, numeric bounds and step metadata, help/units, basic/advanced controls.
-- Native form groups and presentation category/semantic icon.
+- Native form groups, schema-4 tabs, settings actions, presentation category and semantic/embedded PNG icon.
 - The four supported native entries for schema 2; exact entry/ID pairing is checked by the CLI and Android importer.
 
 Every default is encoded as a **string** in the package. The app compiles the typed runtime value safely. A `variable` value is an explicit Lua-global name string; it is not an automatic output port. Point/region values refer to the macro's reference plane, not guessed device coordinates. Read the SDK README for coordinate sentinels and component constraints.
@@ -45,3 +45,9 @@ node mhblock.mjs validate my-block.mhblock
 ```
 
 Never use editor completion as permission to load APK/DEX/native code, invent an API or skip a user's consent. [Full format contract and examples](../sdk/block-plugins/README.md).
+
+## Schema 4 design support
+
+Use `examples/designed-counter.mhblock` for an embedded offline PNG, Work/Output tabs, two settings profiles and reset. At most eight preset/reset buttons can update existing typed fields; buttons never execute Lua. Images are bounded, static 8-bit RGB/RGBA PNGs without metadata. Use the app image picker to normalize a local source image rather than inventing base64. Arbitrary HTML/CSS, editor callbacks and downloaded native widgets are not supported. The app applies the native theme, focus and accessibility controls.
+
+This release requires the updated schema-4 reader. Older schema-3 readers reject schema 4 even when the app version text is 1.0.51. Existing schemas 1–3 remain valid. Saved macro copies retain their design and settings; bump the package version after edits. [Full exact limits and examples](../sdk/block-plugins/README.md).

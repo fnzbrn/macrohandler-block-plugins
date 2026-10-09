@@ -2,7 +2,7 @@
 import {
   readPackage, validatePackage, validateInputValue, encodePackage,
   INPUT_TYPES, ICONS, NATIVE_ENTRIES,
-  type AdvancedLuaBlockPlugin, type LegacyLuaBlockPlugin, type NativeBlockPlugin,
+  type AdvancedLuaBlockPlugin, type LegacyLuaBlockPlugin, type NativeBlockPlugin, type RichLuaBlockPlugin,
   type BlockPluginPackage, type BlockPluginInputType, type BlockPluginIcon, type NativeBlockPluginEntry,
 } from '../package.mjs'
 
@@ -29,6 +29,18 @@ const native: NativeBlockPlugin = {
   format: 'macrohandler.block', schemaVersion: 2, id: 'com.macrohandler.navigation_stop', version: '1.0.0', name: 'Stop', code: '',
   native: {entry: 'navigation_stop', apiVersion: 1, source: 'Existing allowlisted engine'},
 }
+const designed: RichLuaBlockPlugin = {
+  format: 'macrohandler.block', schemaVersion: 4, id: 'example.designed', version: '1.0.0', name: 'Designed', code: 'print(inputs.x)',
+  inputs: [{key:'x',label:'X',type:'number',defaultValue:'2',min:0,max:10}],
+  form: {layout:'tabs',groups:[{id:'main',label:'Main'}],actions:[{id:'quick',label:'Quick',values:{x:'3'}},{id:'restore',label:'Reset',kind:'reset'}]},
+  presentation: {icon:'data',iconPng:null},
+}
+validatePackage(designed)
+// @ts-expect-error tabs need schema 4
+const legacyTabs: AdvancedLuaBlockPlugin = {...designed,schemaVersion:3,form:{layout:'tabs'}}
+// @ts-expect-error preset values are strings
+const numericPreset: RichLuaBlockPlugin = {...designed,form:{actions:[{id:'x',label:'X',values:{x:3}}]}}
+void [legacyTabs,numericPreset]
 for (const result of [readPackage(encodePackage(advanced)), validatePackage(legacy), validatePackage(native)]) {
   if (result.schemaVersion === 3) {
     const field = result.inputs?.[0]

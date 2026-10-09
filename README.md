@@ -95,3 +95,7 @@ Each guide explains the purpose, requirements and import steps, and includes the
 - [Navigation Stop](docs/navigation-stop.md)
 - [Agent Detect](docs/agent-detect.md)
 - [Agent Routine](docs/agent-routine.md)
+
+## Custom block design SDK 1.1.0
+
+The [English authoring guide](docs/block-authoring-sdk.md) explains how to build and distribute your own Lua block, choose an embedded offline PNG icon, organize typed properties into native tabs, and add atomic settings presets/reset. [Review the versioned SDK release](https://github.com/fnzbrn/macrohandler-block-plugins/releases/tag/sdk-v1.1.0) before downloading. Requires the updated schema-4 reader; this does not change the four native plugin packages or claim Play publication.

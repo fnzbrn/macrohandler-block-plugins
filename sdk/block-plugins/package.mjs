@@ -1,6 +1,7 @@
 import { parsePackageJson, MAX_PACKAGE_BYTES } from './strict-json.mjs'
 import { RESERVED_VARIABLES } from './reserved-variables.mjs'
 import { checkLuaPolicy } from './lua-policy.mjs'
+import { validateIconPng } from './png-icon.mjs'
 
 const rootKeys = ['format', 'schemaVersion', 'id', 'version', 'name', 'description', 'author', 'inputs', 'code', 'native', 'form', 'presentation']
 const inputKeys = ['key', 'label', 'type', 'defaultValue', 'choices', 'help', 'unit', 'group', 'advanced', 'multiline', 'min', 'max', 'step', 'required']
@@ -71,7 +72,7 @@ export function validateInputValue(input, value) {
 export function validatePackage(raw) {
   object(raw, rootKeys)
   for (const key of ['format', 'schemaVersion', 'id', 'version', 'name', 'code']) check(Object.hasOwn(raw, key), 'Missing required property')
-  check(raw.format === 'macrohandler.block' && [1, 2, 3].includes(raw.schemaVersion), 'Unsupported format or schema')
+  check(raw.format === 'macrohandler.block' && [1, 2, 3, 4].includes(raw.schemaVersion), 'Unsupported format or schema')
   string(raw.id, 96); check(id.test(raw.id), 'Invalid package ID')
   string(raw.version, 51); check(/^[0-9]{1,5}\.[0-9]{1,5}\.[0-9]{1,5}(?:-[a-zA-Z0-9.-]{1,32})?$/.test(raw.version), 'Invalid version')
   string(raw.name, 80, true, true); string(raw.description ?? '', 2048); string(raw.author ?? '', 120)
@@ -79,22 +80,42 @@ export function validatePackage(raw) {
   const inputs = raw.inputs ?? []
   check(Array.isArray(inputs) && inputs.length <= 24, 'Too many inputs')
   check(new Set(inputs.map(i => i?.key)).size === inputs.length, 'Duplicate input key')
-  const advanced = raw.schemaVersion === 3
+  const advanced = [3, 4].includes(raw.schemaVersion), rich = raw.schemaVersion === 4
   if (!advanced) check(!present(raw.form) && !present(raw.presentation), 'Advanced form requires schema 3')
   let groups = []
   if (present(raw.form)) {
-    object(raw.form, ['layout', 'groups'])
+    object(raw.form, ['layout', 'groups', 'actions'])
     check(raw.form.layout !== null && raw.form.groups !== null, 'Null form field')
     const layout = raw.form.layout ?? 'stack'; groups = raw.form.groups ?? []
-    check(['stack', 'sections'].includes(layout) && Array.isArray(groups) && groups.length <= 8, 'Invalid form')
+    check((rich ? ['stack', 'sections', 'tabs'] : ['stack', 'sections']).includes(layout) && Array.isArray(groups) && groups.length <= 8, 'Invalid form')
     check(layout !== 'stack' || groups.length === 0, 'Groups require sections')
     check(new Set(groups.map(g => g?.id)).size === groups.length, 'Duplicate group')
     for (const g of groups) { object(g, ['id', 'label', 'help']); check(typeof g.id === 'string' && identifier.test(g.id), 'Invalid group ID'); string(g.label, 80, true, true); optionalString(g.help, 1024, true, true) }
   }
   if (present(raw.presentation)) {
-    object(raw.presentation, ['category', 'icon'])
+    object(raw.presentation, ['category', 'icon', 'iconPng'])
     if (present(raw.presentation.category)) string(raw.presentation.category, 80, true, true)
     if (present(raw.presentation.icon)) check(ICONS.includes(raw.presentation.icon), 'Unknown icon')
+    if (present(raw.presentation.iconPng)) { check(rich, 'Custom icons require schema 4'); validateIconPng(raw.presentation.iconPng) }
+  }
+  if (present(raw.form)) {
+    const actions = raw.form.actions ?? []
+    check(raw.form.actions !== null && Array.isArray(actions) && actions.length <= 8 && (rich || actions.length === 0), 'Actions require schema 4; maximum eight')
+    check(new Set(actions.map(a => a?.id)).size === actions.length, 'Duplicate action')
+    for (const action of actions) {
+      object(action, ['id', 'label', 'kind', 'values', 'help', 'icon'])
+      check(typeof action.id === 'string' && identifier.test(action.id), 'Invalid action ID'); string(action.label, 80, true, true)
+      const kind = action.kind ?? 'preset', values = action.values ?? {}
+      check(action.kind !== null && action.values !== null && ['preset', 'reset'].includes(kind), 'Invalid action kind')
+      object(values, inputs.map(i => i.key))
+      check(kind === 'reset' ? Object.keys(values).length === 0 : Object.keys(values).length > 0, 'Preset needs values; reset uses defaults')
+      optionalString(action.help, 1024, true, true)
+      if (present(action.icon)) check(ICONS.includes(action.icon), 'Unknown action icon')
+      for (const [key, value] of Object.entries(values)) {
+        const input = inputs.find(i => i.key === key)
+        validateInputValue({ ...input, type: input.type ?? 'text', choices: input.choices ?? [] }, value)
+      }
+    }
   }
   for (const input of inputs) {
     object(input, inputKeys)
@@ -142,8 +163,11 @@ export function encodePackage(raw) {
       return item
     }), code: raw.code }
   if (present(raw.native)) ordered.native = { entry: raw.native.entry, apiVersion: raw.native.apiVersion, source: raw.native.source }
-  if (present(raw.form)) ordered.form = { layout: raw.form.layout ?? 'stack', groups: (raw.form.groups ?? []).map(g => ({ id: g.id, label: g.label, ...(present(g.help) ? { help: g.help } : {}) })) }
-  if (present(raw.presentation)) ordered.presentation = Object.fromEntries(['category', 'icon'].filter(k => present(raw.presentation[k])).map(k => [k, raw.presentation[k]]))
+  if (present(raw.form)) {
+    ordered.form = { layout: raw.form.layout ?? 'stack', groups: (raw.form.groups ?? []).map(g => ({ id: g.id, label: g.label, ...(present(g.help) ? { help: g.help } : {}) })) }
+    if (raw.form.actions?.length) ordered.form.actions = raw.form.actions.map(a => ({ id: a.id, label: a.label, kind: a.kind ?? 'preset', values: a.values ?? {}, ...Object.fromEntries(['help', 'icon'].filter(k => present(a[k])).map(k => [k, a[k]])) }))
+  }
+  if (present(raw.presentation)) ordered.presentation = Object.fromEntries(['category', 'icon', 'iconPng'].filter(k => present(raw.presentation[k])).map(k => [k, raw.presentation[k]]))
   const bytes = new TextEncoder().encode(JSON.stringify(ordered))
   check(bytes.length <= MAX_PACKAGE_BYTES, 'Encoded package exceeds 256 KiB')
   readPackage(bytes)

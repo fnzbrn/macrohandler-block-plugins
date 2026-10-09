@@ -2,12 +2,12 @@
 
 Create a reusable `.mhblock` package with Lua behavior and typed, editable properties. Import it into Macro Handler and add instances to the **No-Code** or **Logic** workspace. Share the same package with other users, or give the SDK and authoring brief to MH AI or another assistant.
 
-**SDK release:** `sdk-v1.0.0` · **Reader target:** the prepared Macro Handler 1.0.51 (65) schema-3 code line. An older installation with the same version text may lack this reader; the current Google Play baseline must not be assumed to support it.
+**SDK release:** `sdk-v1.1.0` · **Reader target:** the prepared Macro Handler 1.0.51 (65) schema-4 design code line. An older installation with the same version text may lack this reader; the current Google Play baseline must not be assumed to support it.
 
 ## Review, then download
 
-- [Download the reviewed SDK ZIP](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/sdk-v1.0.0/block-plugin-sdk.zip)
-- [Release notes, individual assets and SHA-256 checksums](https://github.com/fnzbrn/macrohandler-block-plugins/releases/tag/sdk-v1.0.0)
+- [Download the reviewed SDK ZIP](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/sdk-v1.1.0/block-plugin-sdk.zip)
+- [Release notes, individual assets and SHA-256 checksums](https://github.com/fnzbrn/macrohandler-block-plugins/releases/tag/sdk-v1.1.0)
 - [Browse the complete SDK source and contract](../sdk/block-plugins/README.md)
 - [JSON schema guide](block-json-schema.md)
 - [AI authoring guide](block-ai-authoring.md)
@@ -22,13 +22,13 @@ Use the application's actual registered Lua APIs for a reusable scenario: bounde
 | --- | --- |
 | Behavior | Lua executed by the existing application compiler/runtime; local functions and real APIs |
 | Editable properties | Text, number, boolean, choice, color, Lua-global name, point and region |
-| Native editor UI | Sections/groups, help, units, basic/advanced fields, multiline/required text, bounded numbers and step grids |
-| Presentation | Custom package name, description, category and one of six semantic icons: `block`, `code`, `search`, `touch`, `flow`, `data` |
+| Native editor UI | Sections/groups or tabs, help, units, basic/advanced fields, multiline/required text, bounded numbers and atomic preset/reset buttons |
+| Presentation | Custom package name, description, category and a local embedded PNG image (32 KiB / 256 pixels) or one of six semantic icons: `block`, `code`, `search`, `touch`, `flow`, `data` |
 | Runtime interaction | The real `Form` API; this is separate from the block property editor |
 | Reuse and flow | The real `Module` and bounded `Workflow` APIs; no external package manager |
 | Distribution | Export/import one UTF-8 `.mhblock` file; immutable package ID + version |
 
-The **application renders the UI using its own accessible native controls**. Arbitrary HTML/CSS, downloaded Java/DEX/native widgets, custom image icons, new permissions and automatic No-Code output ports are not supported. Complexity comes from composing supported Lua operations and typed controls, within the runtime's budgets; this SDK does not claim unlimited computation or certify arbitrary generated code.
+The **application renders the UI using its own accessible native controls**. Arbitrary HTML/CSS, downloaded Java/DEX/native widgets, new permissions and automatic No-Code output ports are not supported. Complexity comes from composing supported Lua operations and typed controls, within the runtime's budgets; this SDK does not claim unlimited computation or certify arbitrary generated code.
 
 ## Offline development
 
@@ -48,7 +48,7 @@ In VS Code, the included `.vscode/settings.json` associates `.mhblock` files wit
 ## Create directly in the app
 
 1. Open **Add block → Plugins → Create block** in either workspace.
-2. Set the package ID, version, name, description, category and semantic icon.
+2. Set the package ID, version, name, description, category and fallback semantic icon. Choose icon image normalizes a local image. Design layout and buttons edits ordered native groups/tabs and atomic preset/reset actions.
 3. Write Lua behavior and define properties. Read their typed values using `inputs.key`; values are compiled as Lua literals, not concatenated executable source.
 4. Use **Preview properties** to inspect a detached draft. Preview does not execute code or change the open macro.
 5. Explicitly choose **Add to block library** after review. Add it to a separate trial macro and test the normal start/stop and permission paths.
@@ -66,7 +66,7 @@ Use the SDK's form/workflow example to study runtime cancellation, numeric valid
 
 - File: **256 KiB UTF-8** including JSON overhead. Up to **24 properties**, **8 groups**, **64 choices per choice property**.
 - Schema 3 Lua: **131,072 UTF-8 bytes**, also subject to the package limit. Other exact bounds are documented in the SDK README.
-- Schema 1 is legacy Lua. Schema 2 is restricted to the four existing official native descriptors; it cannot register a new native engine. Schema 3 provides the advanced declarative Lua editor.
+- Schema 1 is legacy Lua. Schema 2 is restricted to the four existing official native descriptors; it cannot register a new native engine. Schema 3 provides the advanced declarative Lua editor; schema 4 adds embedded icons, tabs and settings actions.
 - Same ID + version cannot be replaced with different content. Increase the version when editing. Installed macro copies remain frozen until the user explicitly replaces/edits them.
 - Unknown properties, malformed/duplicate JSON keys and invalid input metadata are rejected. Android performs authoritative package, compiler, scope, permission and stop checks.
 - Checksums identify bytes; they do not authenticate a publisher. Review source before running untrusted packages.
@@ -80,3 +80,9 @@ Test on the intended reader/device before publishing your own release. A success
 - [Optional official block guides](../README.md)
 
 The SDK tooling, examples, schema and documentation are MIT licensed under the included SDK license. The license does not grant rights to the Android application, native engines, private assets or third-party content.
+
+## Schema 4 design support
+
+Use `examples/designed-counter.mhblock` for an embedded offline PNG, Work/Output tabs, two settings profiles and reset. At most eight preset/reset buttons can update existing typed fields; buttons never execute Lua. Images are bounded, static 8-bit RGB/RGBA PNGs without metadata. Use the app image picker to normalize a local source image rather than inventing base64. Arbitrary HTML/CSS, editor callbacks and downloaded native widgets are not supported. The app applies the native theme, focus and accessibility controls.
+
+This release requires the updated schema-4 reader. Older schema-3 readers reject schema 4 even when the app version text is 1.0.51. Existing schemas 1–3 remain valid. Saved macro copies retain their design and settings; bump the package version after edits. [Full exact limits and examples](../sdk/block-plugins/README.md).
