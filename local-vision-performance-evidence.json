@@ -1,0 +1,1650 @@
+{
+  "date": "2026-10-13",
+  "optimizedHostSource": "631f0475280eaff129dbf05959dde57dcc19ac0f",
+  "baselineSource": "69ebe72d5",
+  "pluginVersion": "1.2.0",
+  "status": "preview-partially-verified",
+  "retainedAppSha256": "0d65a130df26db06d9e44bac5ac83566065c9a99d90680fb13c16cb9dac9de4c",
+  "currentTestSha256": "9cd8db1537c06b8326b608cd4d85d3b55dce223c894b5c93fc0f43f9ad2a2ca4",
+  "comparisons": [
+    {
+      "profile": "local:lfm25-vl450m",
+      "device": "SM-A055F",
+      "baselineWarmMedianMs": 1663,
+      "candidateWarmMedianMs": 1660,
+      "improvementPercent": 0.2,
+      "baselineAccuracy": 13,
+      "candidateAccuracy": 13,
+      "cases": 13,
+      "lostAccuracyCases": [],
+      "casesTimings": {
+        "Read the word in the image. Return that word only.": {
+          "before": 3188,
+          "after": 3076
+        },
+        "Does the image contain the word BLUE?": {
+          "before": 740,
+          "after": 730
+        },
+        "Does the image contain the word RED?": {
+          "before": 725,
+          "after": 728
+        },
+        "red": {
+          "before": 3249,
+          "after": 3249
+        },
+        "same_frame_new_question": {
+          "before": 869,
+          "after": 867
+        },
+        "new_frame_same_question": {
+          "before": 1671,
+          "after": 1665
+        },
+        "button_ready": {
+          "before": 1669,
+          "after": 1661
+        },
+        "button_disabled": {
+          "before": 1663,
+          "after": 1668
+        },
+        "monster": {
+          "before": 1688,
+          "after": 1651
+        },
+        "human": {
+          "before": 1666,
+          "after": 1661
+        },
+        "empty": {
+          "before": 1668,
+          "after": 1660
+        },
+        "return_to_old_frame": {
+          "before": 1656,
+          "after": 1665
+        },
+        "same_frame_again": {
+          "before": 866,
+          "after": 876
+        }
+      }
+    },
+    {
+      "profile": "local:qwen3-vl2b",
+      "device": "SH-M24",
+      "baselineWarmMedianMs": 7541,
+      "candidateWarmMedianMs": 7377,
+      "improvementPercent": 2.2,
+      "baselineAccuracy": 13,
+      "candidateAccuracy": 13,
+      "cases": 13,
+      "lostAccuracyCases": [],
+      "casesTimings": {
+        "Read the word in the image. Return that word only.": {
+          "before": 8979,
+          "after": 9684
+        },
+        "Does the image contain the word BLUE?": {
+          "before": 6648,
+          "after": 5575
+        },
+        "Does the image contain the word RED?": {
+          "before": 6370,
+          "after": 5648
+        },
+        "red": {
+          "before": 8581,
+          "after": 8212
+        },
+        "same_frame_new_question": {
+          "before": 7470,
+          "after": 6141
+        },
+        "new_frame_same_question": {
+          "before": 7584,
+          "after": 7397
+        },
+        "button_ready": {
+          "before": 8327,
+          "after": 7396
+        },
+        "button_disabled": {
+          "before": 8072,
+          "after": 7396
+        },
+        "monster": {
+          "before": 7537,
+          "after": 7483
+        },
+        "human": {
+          "before": 7670,
+          "after": 7354
+        },
+        "empty": {
+          "before": 7540,
+          "after": 7424
+        },
+        "return_to_old_frame": {
+          "before": 7578,
+          "after": 7377
+        },
+        "same_frame_again": {
+          "before": 7541,
+          "after": 6352
+        }
+      }
+    },
+    {
+      "profile": "local:smolvlm-256m",
+      "device": "SH-M24",
+      "baselineWarmMedianMs": 1735,
+      "candidateWarmMedianMs": 1736,
+      "improvementPercent": -0.1,
+      "baselineAccuracy": 13,
+      "candidateAccuracy": 13,
+      "cases": 13,
+      "lostAccuracyCases": [],
+      "casesTimings": {
+        "Read the word in the image. Return that word only.": {
+          "before": 3541,
+          "after": 3515
+        },
+        "Does the image contain the word BLUE?": {
+          "before": 4322,
+          "after": 465
+        },
+        "Does the image contain the word RED?": {
+          "before": 3177,
+          "after": 1394
+        },
+        "red": {
+          "before": 1963,
+          "after": 2226
+        },
+        "same_frame_new_question": {
+          "before": 326,
+          "after": 295
+        },
+        "new_frame_same_question": {
+          "before": 1730,
+          "after": 1730
+        },
+        "button_ready": {
+          "before": 1731,
+          "after": 1810
+        },
+        "button_disabled": {
+          "before": 1760,
+          "after": 1774
+        },
+        "monster": {
+          "before": 1735,
+          "after": 1736
+        },
+        "human": {
+          "before": 1723,
+          "after": 1749
+        },
+        "empty": {
+          "before": 1742,
+          "after": 1747
+        },
+        "return_to_old_frame": {
+          "before": 1784,
+          "after": 1744
+        },
+        "same_frame_again": {
+          "before": 312,
+          "after": 300
+        }
+      }
+    },
+    {
+      "profile": "local:smolvlm-500m",
+      "device": "SM-A055F",
+      "baselineWarmMedianMs": 5511,
+      "candidateWarmMedianMs": 6268,
+      "improvementPercent": -13.7,
+      "baselineAccuracy": 13,
+      "candidateAccuracy": 13,
+      "cases": 13,
+      "lostAccuracyCases": [],
+      "casesTimings": {
+        "Read the word in the image. Return that word only.": {
+          "before": 19309,
+          "after": 14999
+        },
+        "Does the image contain the word BLUE?": {
+          "before": 8324,
+          "after": 8314
+        },
+        "Does the image contain the word RED?": {
+          "before": 8331,
+          "after": 2038
+        },
+        "red": {
+          "before": 12753,
+          "after": 11689
+        },
+        "same_frame_new_question": {
+          "before": 1361,
+          "after": 1783
+        },
+        "new_frame_same_question": {
+          "before": 5511,
+          "after": 9022
+        },
+        "button_ready": {
+          "before": 5496,
+          "after": 12981
+        },
+        "button_disabled": {
+          "before": 5451,
+          "after": 6268
+        },
+        "monster": {
+          "before": 11334,
+          "after": 6438
+        },
+        "human": {
+          "before": 5035,
+          "after": 7894
+        },
+        "empty": {
+          "before": 5608,
+          "after": 6251
+        },
+        "return_to_old_frame": {
+          "before": 5715,
+          "after": 6211
+        },
+        "same_frame_again": {
+          "before": 1633,
+          "after": 1899
+        }
+      }
+    }
+  ],
+  "runs": [
+    {
+      "runId": "62b0f8c5-6fee-4a18-854c-5c4072978ab7",
+      "status": "PASS",
+      "deviceModel": "SM-A055F",
+      "sdk": "34",
+      "abi": "arm64-v8a",
+      "appSha256": "3b236765abbadd78dae7df9ef783b9230239e290cf286c56c5698a69d81316e5",
+      "testSha256": "ceeb648020633beb8db4e4ea05f5679a38720292f23145ca1a7ea57555d4a3bb",
+      "fatalOrAnr": false,
+      "observations": [
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "Read the word in the image. Return that word only.",
+          "expected": "BLUE",
+          "actual": "BLUE",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 3188
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "Does the image contain the word BLUE?",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 740
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "Does the image contain the word RED?",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 725
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "red",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 3249,
+          "nativeHeapBytes": 496380072
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "same_frame_new_question",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 869,
+          "nativeHeapBytes": 495906720
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "new_frame_same_question",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1671,
+          "nativeHeapBytes": 496580192
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "button_ready",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1669,
+          "nativeHeapBytes": 497275800
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "button_disabled",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1663,
+          "nativeHeapBytes": 497951208
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "monster",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1688,
+          "nativeHeapBytes": 498625896
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "human",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1666,
+          "nativeHeapBytes": 499299416
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "empty",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1668,
+          "nativeHeapBytes": 499972936
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "return_to_old_frame",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1656,
+          "nativeHeapBytes": 500646408
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "same_frame_again",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 866,
+          "nativeHeapBytes": 501332168
+        }
+      ],
+      "receiptSha256": "65ac6c71fdb8e585dfeff78e95bfcfabd917f59e736a000f28e3afb70ec5ce1f"
+    },
+    {
+      "runId": "c392ff06-d52e-4a8a-b1a1-c0133595d970",
+      "status": "PASS",
+      "deviceModel": "SH-M24",
+      "sdk": "34",
+      "abi": "x86_64",
+      "appSha256": "3b236765abbadd78dae7df9ef783b9230239e290cf286c56c5698a69d81316e5",
+      "testSha256": "ceeb648020633beb8db4e4ea05f5679a38720292f23145ca1a7ea57555d4a3bb",
+      "fatalOrAnr": false,
+      "observations": [
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "Read the word in the image. Return that word only.",
+          "expected": "BLUE",
+          "actual": "BLUE",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 8979
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "Does the image contain the word BLUE?",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 6648
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "Does the image contain the word RED?",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 6370
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "red",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 8581,
+          "nativeHeapBytes": 718106280
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "same_frame_new_question",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 7470,
+          "nativeHeapBytes": 718097296
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "new_frame_same_question",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 7584,
+          "nativeHeapBytes": 718116080
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "button_ready",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 8327,
+          "nativeHeapBytes": 718824040
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "button_disabled",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 8072,
+          "nativeHeapBytes": 717171240
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "monster",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 7537,
+          "nativeHeapBytes": 717846424
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "human",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 7670,
+          "nativeHeapBytes": 718520312
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "empty",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 7540,
+          "nativeHeapBytes": 719194440
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "return_to_old_frame",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 7578,
+          "nativeHeapBytes": 719868632
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "same_frame_again",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 7541,
+          "nativeHeapBytes": 720542632
+        }
+      ],
+      "receiptSha256": "842715c8c2293cb682b329ff2cb7c5d6176dbf94cb5539c02ef8e136f47025d9"
+    },
+    {
+      "runId": "669d3ea3-8406-4b8e-992d-7ab5e67b181c",
+      "status": "PASS",
+      "deviceModel": "SH-M24",
+      "sdk": "34",
+      "abi": "x86_64",
+      "appSha256": "3b236765abbadd78dae7df9ef783b9230239e290cf286c56c5698a69d81316e5",
+      "testSha256": "ceeb648020633beb8db4e4ea05f5679a38720292f23145ca1a7ea57555d4a3bb",
+      "fatalOrAnr": false,
+      "observations": [
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "Read the word in the image. Return that word only.",
+          "expected": "BLUE",
+          "actual": "BLUE.",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 3541
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "Does the image contain the word BLUE?",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 4322
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "Does the image contain the word RED?",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 3177
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "red",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1963,
+          "nativeHeapBytes": 361694504
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "same_frame_new_question",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 326,
+          "nativeHeapBytes": 361126848
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "new_frame_same_question",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1730,
+          "nativeHeapBytes": 361140912
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "button_ready",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1731,
+          "nativeHeapBytes": 361686040
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "button_disabled",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1760,
+          "nativeHeapBytes": 362443176
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "monster",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1735,
+          "nativeHeapBytes": 363112488
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "human",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1723,
+          "nativeHeapBytes": 363762168
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "empty",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1742,
+          "nativeHeapBytes": 361053512
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "return_to_old_frame",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1784,
+          "nativeHeapBytes": 361066040
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "same_frame_again",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 312,
+          "nativeHeapBytes": 361746408
+        }
+      ],
+      "receiptSha256": "3ca87752647501a97389c56ea037d401364307cde69c8c2a3ac62d5c8783b7a7"
+    },
+    {
+      "runId": "2e519f1c-534b-492b-81f2-28781f4a693f",
+      "status": "PASS",
+      "deviceModel": "SM-A055F",
+      "sdk": "34",
+      "abi": "arm64-v8a",
+      "appSha256": "3b236765abbadd78dae7df9ef783b9230239e290cf286c56c5698a69d81316e5",
+      "testSha256": "ceeb648020633beb8db4e4ea05f5679a38720292f23145ca1a7ea57555d4a3bb",
+      "fatalOrAnr": false,
+      "observations": [
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "Read the word in the image. Return that word only.",
+          "expected": "BLUE",
+          "actual": "BLUE",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 19309
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "Does the image contain the word BLUE?",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 8324
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "Does the image contain the word RED?",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 8331
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "red",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 12753,
+          "nativeHeapBytes": 757589384
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "same_frame_new_question",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1361,
+          "nativeHeapBytes": 757143760
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "new_frame_same_question",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 5511,
+          "nativeHeapBytes": 757810784
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "button_ready",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 5496,
+          "nativeHeapBytes": 758500008
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "button_disabled",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 5451,
+          "nativeHeapBytes": 758128232
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "monster",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 11334,
+          "nativeHeapBytes": 758797296
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "human",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 5035,
+          "nativeHeapBytes": 759464880
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "empty",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 5608,
+          "nativeHeapBytes": 760132336
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "return_to_old_frame",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 5715,
+          "nativeHeapBytes": 756129456
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "same_frame_again",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1633,
+          "nativeHeapBytes": 756140928
+        }
+      ],
+      "receiptSha256": "ca1140a1d036e40c33a7fac684676c86646ec16744276821d280fb60deac03f5"
+    },
+    {
+      "runId": "6101554a-8136-40bf-aa3d-94f9f2ce68fa",
+      "status": "PASS",
+      "deviceModel": "SM-A055F",
+      "sdk": "34",
+      "abi": "arm64-v8a",
+      "appSha256": "0d65a130df26db06d9e44bac5ac83566065c9a99d90680fb13c16cb9dac9de4c",
+      "testSha256": "07ab1c8a23d60aa059dfdb391b7217a95179c6f6bbab41447f31b694f047fd9a",
+      "fatalOrAnr": false,
+      "observations": [
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "Read the word in the image. Return that word only.",
+          "expected": "BLUE",
+          "actual": "BLUE",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 3076
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "Does the image contain the word BLUE?",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 730
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "Does the image contain the word RED?",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 728
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "red",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 3249,
+          "nativeHeapBytes": 496687736
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "same_frame_new_question",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 867,
+          "nativeHeapBytes": 496211248
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "new_frame_same_question",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1665,
+          "nativeHeapBytes": 496884720
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "button_ready",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1661,
+          "nativeHeapBytes": 497582760
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "button_disabled",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1668,
+          "nativeHeapBytes": 498256376
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "monster",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1651,
+          "nativeHeapBytes": 498930872
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "human",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1661,
+          "nativeHeapBytes": 499604392
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "empty",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1660,
+          "nativeHeapBytes": 500277912
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "return_to_old_frame",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1665,
+          "nativeHeapBytes": 500951384
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "same_frame_again",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 876,
+          "nativeHeapBytes": 501637144
+        }
+      ],
+      "receiptSha256": "42c4d80805bf3151584045c3a1beadf997b0f3279daac0fe41e3fd094aee0620"
+    },
+    {
+      "runId": "f4be3fde-c0f8-495b-a6bf-8aecff2e04c2",
+      "status": "PASS",
+      "deviceModel": "SH-M24",
+      "sdk": "34",
+      "abi": "x86_64",
+      "appSha256": "0d65a130df26db06d9e44bac5ac83566065c9a99d90680fb13c16cb9dac9de4c",
+      "testSha256": "07ab1c8a23d60aa059dfdb391b7217a95179c6f6bbab41447f31b694f047fd9a",
+      "fatalOrAnr": false,
+      "observations": [
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "Read the word in the image. Return that word only.",
+          "expected": "BLUE",
+          "actual": "BLUE",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 9684
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "Does the image contain the word BLUE?",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 5575
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "Does the image contain the word RED?",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 5648
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "red",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 8212,
+          "nativeHeapBytes": 720178768
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "same_frame_new_question",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 6141,
+          "nativeHeapBytes": 720164096
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "new_frame_same_question",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 7397,
+          "nativeHeapBytes": 720655104
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "button_ready",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 7396,
+          "nativeHeapBytes": 721363592
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "button_disabled",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 7396,
+          "nativeHeapBytes": 721924232
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "monster",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 7483,
+          "nativeHeapBytes": 719817560
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "human",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 7354,
+          "nativeHeapBytes": 720491304
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "empty",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 7424,
+          "nativeHeapBytes": 721165288
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "return_to_old_frame",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 7377,
+          "nativeHeapBytes": 721839624
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "same_frame_again",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 6352,
+          "nativeHeapBytes": 722513816
+        }
+      ],
+      "receiptSha256": "e4d494662e693a900311bd6af6502c3c341f72b031b9c5dbe07e63674671410c"
+    },
+    {
+      "runId": "1cdb28b4-ec90-4b4b-bc15-5e08ca1f11fa",
+      "status": "PASS",
+      "deviceModel": "SH-M24",
+      "sdk": "34",
+      "abi": "x86_64",
+      "appSha256": "0d65a130df26db06d9e44bac5ac83566065c9a99d90680fb13c16cb9dac9de4c",
+      "testSha256": "07ab1c8a23d60aa059dfdb391b7217a95179c6f6bbab41447f31b694f047fd9a",
+      "fatalOrAnr": false,
+      "observations": [
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "Read the word in the image. Return that word only.",
+          "expected": "BLUE",
+          "actual": "BLUE.",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 3515
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "Does the image contain the word BLUE?",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 465
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "Does the image contain the word RED?",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1394
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "red",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 2226,
+          "nativeHeapBytes": 360667192
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "same_frame_new_question",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 295,
+          "nativeHeapBytes": 360679720
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "new_frame_same_question",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1730,
+          "nativeHeapBytes": 361558888
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "button_ready",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1810,
+          "nativeHeapBytes": 361493800
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "button_disabled",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1774,
+          "nativeHeapBytes": 361637608
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "monster",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1736,
+          "nativeHeapBytes": 361356224
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "human",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1749,
+          "nativeHeapBytes": 361368448
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "empty",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1747,
+          "nativeHeapBytes": 362036640
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "return_to_old_frame",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1744,
+          "nativeHeapBytes": 362704912
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "same_frame_again",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 300,
+          "nativeHeapBytes": 363228640
+        }
+      ],
+      "receiptSha256": "082d354c0859cd9c88f74bd290fe4d8df558246a608c2dcaa68e50bf988e9e67"
+    },
+    {
+      "runId": "31317017-c920-4eed-8fc1-4a01fd8052ab",
+      "status": "PASS",
+      "deviceModel": "SM-A055F",
+      "sdk": "34",
+      "abi": "arm64-v8a",
+      "appSha256": "0d65a130df26db06d9e44bac5ac83566065c9a99d90680fb13c16cb9dac9de4c",
+      "testSha256": "07ab1c8a23d60aa059dfdb391b7217a95179c6f6bbab41447f31b694f047fd9a",
+      "fatalOrAnr": false,
+      "observations": [
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "Read the word in the image. Return that word only.",
+          "expected": "BLUE",
+          "actual": "BLUE",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 14999
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "Does the image contain the word BLUE?",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 8314
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "Does the image contain the word RED?",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 2038
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "red",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 11689,
+          "nativeHeapBytes": 758414120
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "same_frame_new_question",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1783,
+          "nativeHeapBytes": 757961264
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "new_frame_same_question",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 9022,
+          "nativeHeapBytes": 758628288
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "button_ready",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 12981,
+          "nativeHeapBytes": 759261672
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "button_disabled",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 6268,
+          "nativeHeapBytes": 759047384
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "monster",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 6438,
+          "nativeHeapBytes": 759716464
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "human",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 7894,
+          "nativeHeapBytes": 760384640
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "empty",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 6251,
+          "nativeHeapBytes": 761052096
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "return_to_old_frame",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 6211,
+          "nativeHeapBytes": 757047184
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "same_frame_again",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "elapsedMs": 1899,
+          "nativeHeapBytes": 757060448
+        }
+      ],
+      "receiptSha256": "e0c51335526e15fadfe4f653d3b0e8afe291026d512cec716e0246d10a55b29c"
+    }
+  ],
+  "safetyRuns": [
+    {
+      "runId": "c7309812-d40e-4bfe-bf3a-23e3d4288fd3",
+      "status": "PASS",
+      "deviceModel": "SH-M24",
+      "sdk": "34",
+      "abi": "x86_64",
+      "appSha256": "0d65a130df26db06d9e44bac5ac83566065c9a99d90680fb13c16cb9dac9de4c",
+      "testSha256": "9cd8db1537c06b8326b608cd4d85d3b55dce223c894b5c93fc0f43f9ad2a2ca4",
+      "fatalOrAnr": false,
+      "observations": [
+        {
+          "kind": "fastSafety",
+          "details": "case=0; captureAndBranchMs=1389; expected=true"
+        },
+        {
+          "kind": "fastSafety",
+          "details": "case=1; captureAndBranchMs=782; expected=false"
+        },
+        {
+          "kind": "fastSafety",
+          "details": "case=2; captureAndBranchMs=955; expected=true"
+        },
+        {
+          "kind": "fastSafety",
+          "details": "case=3; captureAndBranchMs=791; expected=false"
+        },
+        {
+          "kind": "fastSafety",
+          "details": "case=4; captureAndBranchMs=455; expected=true"
+        },
+        {
+          "kind": "fastSafety",
+          "details": "case=5; captureAndBranchMs=451; expected=false"
+        },
+        {
+          "kind": "fastSafety",
+          "details": "case=6; captureAndBranchMs=778; expected=false"
+        },
+        {
+          "kind": "fastSafety",
+          "details": "case=7; captureAndBranchMs=385; expected=true"
+        },
+        {
+          "kind": "fastSafety",
+          "details": "case=8; captureAndBranchMs=693; expected=true"
+        },
+        {
+          "kind": "fastSafety",
+          "details": "case=9; captureAndBranchMs=614; expected=false"
+        },
+        {
+          "kind": "fastSafety",
+          "details": "shortBudgetMs=825; shortBudgetOk=true; changedQuestionHotMs=353; changedQuestionHotOk=true"
+        },
+        {
+          "expression": "8 - 13",
+          "expected": "-5",
+          "answer": "-5",
+          "ok": true,
+          "elapsedMs": 207
+        },
+        {
+          "expression": "(8 + 2) / 4",
+          "expected": "2.5",
+          "answer": "2.5",
+          "ok": true,
+          "elapsedMs": 27
+        },
+        {
+          "expression": "12 + 30",
+          "expected": "42",
+          "answer": "42",
+          "ok": true,
+          "elapsedMs": 26
+        },
+        {
+          "expression": "6 * 7",
+          "expected": "42",
+          "answer": "42",
+          "ok": true,
+          "elapsedMs": 24
+        },
+        {
+          "expression": "1 / 0",
+          "expected": "",
+          "answer": "",
+          "ok": true,
+          "elapsedMs": 25
+        },
+        {
+          "expression": "6 * 7 = 42",
+          "expected": "",
+          "answer": "",
+          "ok": true,
+          "elapsedMs": 25
+        },
+        {
+          "expression": "Meeting canceled",
+          "expected": "",
+          "answer": "",
+          "ok": true,
+          "elapsedMs": 26
+        },
+        {
+          "expression": "",
+          "expected": "",
+          "answer": "",
+          "ok": true,
+          "elapsedMs": 10
+        }
+      ],
+      "receiptSha256": "2093c743cdf94c8fe2ee9f6d648bef835bf172d9c71c6bccb5d6998a0b80b851"
+    },
+    {
+      "runId": "81aa3790-8959-48af-a3e9-51c5fa0d5d0a",
+      "status": "PASS",
+      "deviceModel": "SM-A055F",
+      "sdk": "34",
+      "abi": "arm64-v8a",
+      "appSha256": "0d65a130df26db06d9e44bac5ac83566065c9a99d90680fb13c16cb9dac9de4c",
+      "testSha256": "9cd8db1537c06b8326b608cd4d85d3b55dce223c894b5c93fc0f43f9ad2a2ca4",
+      "fatalOrAnr": false,
+      "observations": [
+        {
+          "kind": "fastSafety",
+          "details": "case=0; captureAndBranchMs=3549; expected=true"
+        },
+        {
+          "kind": "fastSafety",
+          "details": "case=1; captureAndBranchMs=1742; expected=false"
+        },
+        {
+          "kind": "fastSafety",
+          "details": "case=2; captureAndBranchMs=1741; expected=true"
+        },
+        {
+          "kind": "fastSafety",
+          "details": "case=3; captureAndBranchMs=1745; expected=false"
+        },
+        {
+          "kind": "fastSafety",
+          "details": "case=4; captureAndBranchMs=1119; expected=true"
+        },
+        {
+          "kind": "fastSafety",
+          "details": "case=5; captureAndBranchMs=1054; expected=false"
+        },
+        {
+          "kind": "fastSafety",
+          "details": "case=6; captureAndBranchMs=1757; expected=false"
+        },
+        {
+          "kind": "fastSafety",
+          "details": "case=7; captureAndBranchMs=951; expected=true"
+        },
+        {
+          "kind": "fastSafety",
+          "details": "case=8; captureAndBranchMs=1439; expected=true"
+        },
+        {
+          "kind": "fastSafety",
+          "details": "case=9; captureAndBranchMs=1436; expected=false"
+        },
+        {
+          "kind": "fastSafety",
+          "details": "shortBudgetMs=1016; shortBudgetOk=false; changedQuestionHotMs=863; changedQuestionHotOk=true"
+        },
+        {
+          "expression": "8 - 13",
+          "expected": "-5",
+          "answer": "-5",
+          "ok": true,
+          "elapsedMs": 585
+        },
+        {
+          "expression": "(8 + 2) / 4",
+          "expected": "2.5",
+          "answer": "2.5",
+          "ok": true,
+          "elapsedMs": 126
+        },
+        {
+          "expression": "12 + 30",
+          "expected": "42",
+          "answer": "42",
+          "ok": true,
+          "elapsedMs": 125
+        },
+        {
+          "expression": "6 * 7",
+          "expected": "42",
+          "answer": "42",
+          "ok": true,
+          "elapsedMs": 132
+        },
+        {
+          "expression": "1 / 0",
+          "expected": "",
+          "answer": "",
+          "ok": true,
+          "elapsedMs": 124
+        },
+        {
+          "expression": "6 * 7 = 42",
+          "expected": "",
+          "answer": "",
+          "ok": true,
+          "elapsedMs": 143
+        },
+        {
+          "expression": "Meeting canceled",
+          "expected": "",
+          "answer": "",
+          "ok": true,
+          "elapsedMs": 138
+        },
+        {
+          "expression": "",
+          "expected": "",
+          "answer": "",
+          "ok": true,
+          "elapsedMs": 98
+        }
+      ],
+      "receiptSha256": "8cb737658d71c02ea1eb5347ba2a82abee35adae44e5571899b741036afebfa7"
+    }
+  ],
+  "focusedJvmTests": 50,
+  "acceptedFinalDeviceMethods": 14,
+  "nativeCacheChecks": {
+    "abis": [
+      "arm64-v8a",
+      "x86_64"
+    ],
+    "status": "PASS",
+    "compiler": "Android NDK 27.0.12077973 clang++ -std=c++17 -O2 -static-libstdc++",
+    "binarySha256": {
+      "arm64": "0e828aa787faa263f983b82e29b8e67c46b3ecbdbd1f5705e73442ae30a58447",
+      "x86_64": "92cb0369a714fbbdda9a72e9e4722eebfdf807ef32782aa4e62d71da71ca1b8d"
+    },
+    "checks": [
+      "exact pixel identity",
+      "dimension and embedding shape identity",
+      "partial invalidation",
+      "overflow-safe 16 MiB cap",
+      "1000 cache replacements (not 1000 model inferences)",
+      "release of maximum-size allocations"
+    ]
+  },
+  "limitations": [
+    "No overall mixed-workload speedup proved for Smol500; warm median was 5511 to 6268 ms in retained paired runs. Causation of device variability was not established.",
+    "Cold model load and integrity verification are distinct; checksums were verified before timed scenario probes.",
+    "52 owned fixture responses matched expectations; prior generative arithmetic and complex-message failures remain valid.",
+    "No 24-hour endurance, real-game, every-OEM, all-language-model-accuracy or complete real-user MediaProjection acceptance.",
+    "No universal 1-3 second guarantee; use LFM for the fastest tested binary task profile and Arithmetic OCR for supported calculations."
+  ]
+}

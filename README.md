@@ -27,6 +27,12 @@ the low-memory physical Samsung. No universal 1–3 second, single-pixel, game o
 [expected/actual evidence](local-vision-multimodel-evidence.json) and
 [the preview release](https://github.com/fnzbrn/macrohandler-block-plugins/releases/tag/local-vision-v1.2.0).
 
+The [October 13 performance and stability follow-up](docs/local-visual-performance.md)
+records additional owned-scene, arithmetic, timeout and recovery tests, plus a bounded
+same-frame optimization in the updated host. It includes slower observations and
+remaining limitations. The plugin descriptor stays at 1.2.0; the optimization needs
+the newer Android host identified in that report.
+
 ## Packages
 
 | Download block | Editor | Setup guide |
