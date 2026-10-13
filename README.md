@@ -33,6 +33,10 @@ same-frame optimization in the updated host. It includes slower observations and
 remaining limitations. The plugin descriptor stays at 1.2.0; the optimization needs
 the newer Android host identified in that report.
 
+[The subsequent preparation and cancellation fix](docs/local-visual-stability-followup.md)
+removes duplicate verification after import/download, preserves integrity checks
+and rejects late answers. Its final build passed 54 JVM tests and 16 device methods.
+
 ## Packages
 
 | Download block | Editor | Setup guide |
