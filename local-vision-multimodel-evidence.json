@@ -1,0 +1,1170 @@
+{
+  "date": "2026-10-13",
+  "packageVersion": "1.2.0",
+  "hostVersion": "1.0.52",
+  "versionCode": 66,
+  "sourceBase": "cd005625c",
+  "finalApks": {
+    "app": "3b236765abbadd78dae7df9ef783b9230239e290cf286c56c5698a69d81316e5",
+    "test": "b17e17463c9406e2a70237297f586de77c04014caf541fa550054201fe3f6828"
+  },
+  "packageRawSha256": "20542fd7005aa5f47e42f4e0005f60de68ab72252f8ada0ad9e42ee2dd90974d",
+  "jvm": [
+    {
+      "name": "com.macrohandler.app.data.LocalVisionMultitaskCodegenTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.macrohandler.app.host.aiops.vision.LocalVisionArithmeticTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.macrohandler.app.host.aiops.vision.LocalVisionOutputPolicyTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.macrohandler.app.host.aiops.vision.LocalVisionPluginContractTest",
+      "tests": "5",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.macrohandler.app.model.VisualDecisionMetadataCodecTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.macrohandler.app.runtime.compat.CompatAiHostTest",
+      "tests": "16",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.macrohandler.app.runtime.Lua54NativeAiHostAdapterTest",
+      "tests": "17",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    }
+  ],
+  "deviceRuns": [
+    {
+      "runId": "8968c362-ba10-4e48-9764-d74ae53c9733",
+      "phase": "local-multitask-final-lfm-Samsung",
+      "model": "SM-A055F",
+      "sdk": "34",
+      "abi": "arm64-v8a",
+      "app": "3b236765abbadd78dae7df9ef783b9230239e290cf286c56c5698a69d81316e5",
+      "test": "b17e17463c9406e2a70237297f586de77c04014caf541fa550054201fe3f6828",
+      "status": "PASS",
+      "fatalOrAnr": false,
+      "finalApk": true,
+      "methods": [
+        "com.macrohandler.app.host.aiops.vision.LocalVisionMultimodelInstrumentedTest#realModelsProduceBoundedTaskOutputsThroughBothHostAdapters",
+        "com.macrohandler.app.host.aiops.vision.LocalVisionMultimodelInstrumentedTest#invalidModesAndTruncatedOutputCannotYieldUsableAnswers",
+        "com.macrohandler.app.host.aiops.vision.LocalVisionMultimodelInstrumentedTest#arithmeticCompanionReadsAndCalculatesWithoutAnySelectedModelWeights",
+        "com.macrohandler.app.ui.visualbuilder.LocalVisionPluginUiInstrumentedTest#localPluginHasThemedPaletteCardAndLocalizedOfflineSettings"
+      ],
+      "methodCount": 4,
+      "noSkippedMethods": true,
+      "observations": [
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "math",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "number",
+          "expected": "42",
+          "actual": "6",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 2930,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "math_with_bound_prompt",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "number",
+          "expected": "42",
+          "actual": "18",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 764,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "message",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "Yes, noon works.",
+          "actual": "",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 1976,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "message_negative",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "",
+          "actual": "",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 1981,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "object",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "red circle",
+          "actual": "A circle, red",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 1884,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "monster",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "decision",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 1653,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "empty",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "decision",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 1646,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "expression": "6 * 7",
+          "answer": "42",
+          "decision": "true",
+          "elapsedMs": 655,
+          "kind": "ARITHMETIC"
+        },
+        {
+          "expression": "12 + 30",
+          "answer": "42",
+          "decision": "true",
+          "elapsedMs": 126,
+          "kind": "ARITHMETIC"
+        },
+        {
+          "expression": "1 / 0",
+          "answer": "",
+          "decision": "unknown",
+          "elapsedMs": 109,
+          "kind": "ARITHMETIC"
+        },
+        {
+          "expression": "",
+          "answer": "",
+          "decision": "unknown",
+          "elapsedMs": 93,
+          "kind": "ARITHMETIC"
+        }
+      ],
+      "receiptSha256": "6beeece8deda25a3229b4e84fea9b9da467b6d5bded4943304cb8e95d158a293"
+    },
+    {
+      "runId": "88ee48eb-f80d-4fd3-8c16-b48bc56b987b",
+      "phase": "local-multitask-v2-lfm-Samsung",
+      "model": "SM-A055F",
+      "sdk": "34",
+      "abi": "arm64-v8a",
+      "app": "da923f83dcd67e14f0f6da68c98f03c45af5b82a3415b47e5e381e9bb75fca94",
+      "test": "a14854b1021db094ad334a5a425360bc9f2a3d3401cfdf574c448a6484f2f511",
+      "status": "PASS",
+      "fatalOrAnr": false,
+      "finalApk": false,
+      "methods": [
+        "com.macrohandler.app.host.aiops.vision.LocalVisionMultimodelInstrumentedTest#realModelsProduceBoundedTaskOutputsThroughBothHostAdapters",
+        "com.macrohandler.app.host.aiops.vision.LocalVisionMultimodelInstrumentedTest#invalidModesAndTruncatedOutputCannotYieldUsableAnswers"
+      ],
+      "methodCount": 2,
+      "noSkippedMethods": true,
+      "observations": [
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "math",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "number",
+          "expected": "42",
+          "actual": "6",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 2907,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "math_with_bound_prompt",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "number",
+          "expected": "42",
+          "actual": "18",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 784,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "message",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "Yes, noon works.",
+          "actual": "",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 1977,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "message_negative",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "",
+          "actual": "",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 1978,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "object",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "red circle",
+          "actual": "A circle, red",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 1901,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "monster",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "decision",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 1685,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:lfm25-vl450m",
+          "id": "empty",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "decision",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 1707,
+          "kind": "MULTIMODEL"
+        }
+      ],
+      "receiptSha256": "33cfd630a1ee53a5a300605c71b0c740c3aa9f3b1e74aed26575a123c844a6b5"
+    },
+    {
+      "runId": "44c6e192-5d7e-422e-bf5e-f976c84d34eb",
+      "phase": "local-multitask-v2-qwen-LDPlayer",
+      "model": "SH-M24",
+      "sdk": "34",
+      "abi": "x86_64",
+      "app": "da923f83dcd67e14f0f6da68c98f03c45af5b82a3415b47e5e381e9bb75fca94",
+      "test": "a14854b1021db094ad334a5a425360bc9f2a3d3401cfdf574c448a6484f2f511",
+      "status": "PASS",
+      "fatalOrAnr": false,
+      "finalApk": false,
+      "methods": [
+        "com.macrohandler.app.host.aiops.vision.LocalVisionMultimodelInstrumentedTest#realModelsProduceBoundedTaskOutputsThroughBothHostAdapters",
+        "com.macrohandler.app.host.aiops.vision.LocalVisionMultimodelInstrumentedTest#invalidModesAndTruncatedOutputCannotYieldUsableAnswers",
+        "com.macrohandler.app.ui.visualbuilder.LocalVisionPluginUiInstrumentedTest#localPluginHasThemedPaletteCardAndLocalizedOfflineSettings"
+      ],
+      "methodCount": 3,
+      "noSkippedMethods": true,
+      "observations": [
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "math",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "number",
+          "expected": "42",
+          "actual": "",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 7327,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "math_with_bound_prompt",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "number",
+          "expected": "42",
+          "actual": "",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 5665,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "message",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "Yes, noon works.",
+          "actual": "Yes, noon works.",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 11854,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "message_negative",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "",
+          "actual": "",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 8309,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "object",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "red circle",
+          "actual": "Circle, Red",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 9543,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "monster",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "decision",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 7150,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "empty",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "decision",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 7266,
+          "kind": "MULTIMODEL"
+        }
+      ],
+      "receiptSha256": "cd2bf81bff8a4b8d6d45596d6f4081a5429f158970b0be167493308988eed3f1"
+    },
+    {
+      "runId": "4561c086-1522-4d5c-b51b-3b94c06a75dc",
+      "phase": "local-multitask-v2-smol256-LDPlayer",
+      "model": "SH-M24",
+      "sdk": "34",
+      "abi": "x86_64",
+      "app": "da923f83dcd67e14f0f6da68c98f03c45af5b82a3415b47e5e381e9bb75fca94",
+      "test": "a14854b1021db094ad334a5a425360bc9f2a3d3401cfdf574c448a6484f2f511",
+      "status": "PASS",
+      "fatalOrAnr": false,
+      "finalApk": false,
+      "methods": [
+        "com.macrohandler.app.host.aiops.vision.LocalVisionMultimodelInstrumentedTest#realModelsProduceBoundedTaskOutputsThroughBothHostAdapters",
+        "com.macrohandler.app.host.aiops.vision.LocalVisionMultimodelInstrumentedTest#invalidModesAndTruncatedOutputCannotYieldUsableAnswers"
+      ],
+      "methodCount": 2,
+      "noSkippedMethods": true,
+      "observations": [
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "math",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "number",
+          "expected": "42",
+          "actual": "1",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 4553,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "math_with_bound_prompt",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "number",
+          "expected": "42",
+          "actual": "27",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 3484,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "message",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "Yes, noon works.",
+          "actual": "",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 1921,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "message_negative",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "",
+          "actual": "",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 1881,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "object",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "red circle",
+          "actual": "Circle",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 1827,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "monster",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "decision",
+          "expected": "true",
+          "actual": "false",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 1807,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "empty",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "decision",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 1761,
+          "kind": "MULTIMODEL"
+        }
+      ],
+      "receiptSha256": "39c9ef856655a7d024992ea19571e7c51875bbd457a690401f96c017d50e4c2f"
+    },
+    {
+      "runId": "4010c079-4957-4e83-9c55-67a9fd40c6d9",
+      "phase": "local-multitask-v2-smol500-LDPlayer",
+      "model": "SH-M24",
+      "sdk": "34",
+      "abi": "x86_64",
+      "app": "da923f83dcd67e14f0f6da68c98f03c45af5b82a3415b47e5e381e9bb75fca94",
+      "test": "a14854b1021db094ad334a5a425360bc9f2a3d3401cfdf574c448a6484f2f511",
+      "status": "PASS",
+      "fatalOrAnr": false,
+      "finalApk": false,
+      "methods": [
+        "com.macrohandler.app.host.aiops.vision.LocalVisionMultimodelInstrumentedTest#realModelsProduceBoundedTaskOutputsThroughBothHostAdapters",
+        "com.macrohandler.app.host.aiops.vision.LocalVisionMultimodelInstrumentedTest#invalidModesAndTruncatedOutputCannotYieldUsableAnswers"
+      ],
+      "methodCount": 2,
+      "noSkippedMethods": true,
+      "observations": [
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "math",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "number",
+          "expected": "42",
+          "actual": "6.7",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 8355,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "math_with_bound_prompt",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "number",
+          "expected": "42",
+          "actual": "60",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 6845,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "message",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "Yes, noon works.",
+          "actual": "",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 5754,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "message_negative",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "",
+          "actual": "",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 5463,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "object",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "red circle",
+          "actual": "Circle red.",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 5005,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "monster",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "decision",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 4536,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "empty",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "decision",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 4825,
+          "kind": "MULTIMODEL"
+        }
+      ],
+      "receiptSha256": "eb95ba42b738ddf067a92f42507bfd0cc07630437d98a4eb901353200628ebca"
+    },
+    {
+      "runId": "ad519931-e605-4be4-9da7-bf2eee928555",
+      "phase": "local-multitask-v2-smol500-Samsung",
+      "model": "SM-A055F",
+      "sdk": "34",
+      "abi": "arm64-v8a",
+      "app": "da923f83dcd67e14f0f6da68c98f03c45af5b82a3415b47e5e381e9bb75fca94",
+      "test": "a14854b1021db094ad334a5a425360bc9f2a3d3401cfdf574c448a6484f2f511",
+      "status": "PASS",
+      "fatalOrAnr": false,
+      "finalApk": false,
+      "methods": [
+        "com.macrohandler.app.host.aiops.vision.LocalVisionMultimodelInstrumentedTest#realModelsProduceBoundedTaskOutputsThroughBothHostAdapters",
+        "com.macrohandler.app.host.aiops.vision.LocalVisionMultimodelInstrumentedTest#invalidModesAndTruncatedOutputCannotYieldUsableAnswers",
+        "com.macrohandler.app.ui.visualbuilder.LocalVisionPluginUiInstrumentedTest#localPluginHasThemedPaletteCardAndLocalizedOfflineSettings"
+      ],
+      "methodCount": 3,
+      "noSkippedMethods": true,
+      "observations": [
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "math",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "number",
+          "expected": "42",
+          "actual": "6.7",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 27420,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "math_with_bound_prompt",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "number",
+          "expected": "42",
+          "actual": "60",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 9167,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "message",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "Yes, noon works.",
+          "actual": "",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 11610,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "message_negative",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "",
+          "actual": "",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 11770,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "object",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "red circle",
+          "actual": "Circle, red.",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 5586,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "monster",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "decision",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 5947,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "empty",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "decision",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 5549,
+          "kind": "MULTIMODEL"
+        }
+      ],
+      "receiptSha256": "f8b9b7b66b6473e41e8f0487a7ec4b68928053eb62474ea8ae9722791e5da5ad"
+    },
+    {
+      "runId": "e8c68913-e8de-45d2-8d98-02e246549d69",
+      "phase": "local-multitask-v3-qwen-LDPlayer",
+      "model": "SH-M24",
+      "sdk": "34",
+      "abi": "x86_64",
+      "app": "3b236765abbadd78dae7df9ef783b9230239e290cf286c56c5698a69d81316e5",
+      "test": "b17e17463c9406e2a70237297f586de77c04014caf541fa550054201fe3f6828",
+      "status": "PASS",
+      "fatalOrAnr": false,
+      "finalApk": true,
+      "methods": [
+        "com.macrohandler.app.host.aiops.vision.LocalVisionMultimodelInstrumentedTest#realModelsProduceBoundedTaskOutputsThroughBothHostAdapters",
+        "com.macrohandler.app.host.aiops.vision.LocalVisionMultimodelInstrumentedTest#invalidModesAndTruncatedOutputCannotYieldUsableAnswers",
+        "com.macrohandler.app.host.aiops.vision.LocalVisionMultimodelInstrumentedTest#arithmeticCompanionReadsAndCalculatesWithoutAnySelectedModelWeights",
+        "com.macrohandler.app.ui.visualbuilder.LocalVisionPluginUiInstrumentedTest#localPluginHasThemedPaletteCardAndLocalizedOfflineSettings",
+        "com.macrohandler.app.host.aiops.vision.LocalVisionMultimodelInstrumentedTest#inspectNativeNumericOutputOnOwnedTypedArithmetic"
+      ],
+      "methodCount": 5,
+      "noSkippedMethods": true,
+      "observations": [
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "math",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "number",
+          "expected": "42",
+          "actual": "",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 7354,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "math_with_bound_prompt",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "number",
+          "expected": "42",
+          "actual": "",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 5890,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "message",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "Yes, noon works.",
+          "actual": "Yes, noon works.",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 13626,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "message_negative",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "",
+          "actual": "",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 8836,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "object",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "red circle",
+          "actual": "Circle, Red",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 10486,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "monster",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "decision",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 7685,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "id": "empty",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "decision",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 7743,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "expression": "6 * 7",
+          "answer": "42",
+          "decision": "true",
+          "elapsedMs": 157,
+          "kind": "ARITHMETIC"
+        },
+        {
+          "expression": "12 + 30",
+          "answer": "42",
+          "decision": "true",
+          "elapsedMs": 26,
+          "kind": "ARITHMETIC"
+        },
+        {
+          "expression": "1 / 0",
+          "answer": "",
+          "decision": "unknown",
+          "elapsedMs": 25,
+          "kind": "ARITHMETIC"
+        },
+        {
+          "expression": "",
+          "answer": "",
+          "decision": "unknown",
+          "elapsedMs": 10,
+          "kind": "ARITHMETIC"
+        },
+        {
+          "profile": "local:qwen3-vl2b",
+          "ownedFixture": true,
+          "task": "number",
+          "answer": "UNKNOWN",
+          "kind": "MULTIMODEL_RAW"
+        }
+      ],
+      "receiptSha256": "90aa275a93ebc67ee549664ed5c923f4dce98a981e4c8bc4e295ff35add291ab"
+    },
+    {
+      "runId": "cb9b6787-8d2a-4897-a75e-04a9ae966966",
+      "phase": "local-multitask-v3-smol256-LDPlayer",
+      "model": "SH-M24",
+      "sdk": "34",
+      "abi": "x86_64",
+      "app": "3b236765abbadd78dae7df9ef783b9230239e290cf286c56c5698a69d81316e5",
+      "test": "b17e17463c9406e2a70237297f586de77c04014caf541fa550054201fe3f6828",
+      "status": "PASS",
+      "fatalOrAnr": false,
+      "finalApk": true,
+      "methods": [
+        "com.macrohandler.app.host.aiops.vision.LocalVisionMultimodelInstrumentedTest#realModelsProduceBoundedTaskOutputsThroughBothHostAdapters",
+        "com.macrohandler.app.host.aiops.vision.LocalVisionMultimodelInstrumentedTest#invalidModesAndTruncatedOutputCannotYieldUsableAnswers"
+      ],
+      "methodCount": 2,
+      "noSkippedMethods": true,
+      "observations": [
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "math",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "number",
+          "expected": "42",
+          "actual": "1",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 4589,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "math_with_bound_prompt",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "number",
+          "expected": "42",
+          "actual": "27",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 3332,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "message",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "Yes, noon works.",
+          "actual": "",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 1814,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "message_negative",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "",
+          "actual": "",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 1824,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "object",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "red circle",
+          "actual": "Circle",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 1746,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "monster",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "decision",
+          "expected": "true",
+          "actual": "false",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 1703,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-256m",
+          "id": "empty",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "decision",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 1693,
+          "kind": "MULTIMODEL"
+        }
+      ],
+      "receiptSha256": "324c1f6563bd6d999d26228c3c2bb65c29880290f6a7172c808f45d4083e93fc"
+    },
+    {
+      "runId": "300c42d6-9b15-44a2-9af8-147bac6e5e58",
+      "phase": "local-multitask-v3-smol500-Samsung",
+      "model": "SM-A055F",
+      "sdk": "34",
+      "abi": "arm64-v8a",
+      "app": "3b236765abbadd78dae7df9ef783b9230239e290cf286c56c5698a69d81316e5",
+      "test": "b17e17463c9406e2a70237297f586de77c04014caf541fa550054201fe3f6828",
+      "status": "PASS",
+      "fatalOrAnr": false,
+      "finalApk": true,
+      "methods": [
+        "com.macrohandler.app.host.aiops.vision.LocalVisionMultimodelInstrumentedTest#realModelsProduceBoundedTaskOutputsThroughBothHostAdapters",
+        "com.macrohandler.app.host.aiops.vision.LocalVisionMultimodelInstrumentedTest#invalidModesAndTruncatedOutputCannotYieldUsableAnswers"
+      ],
+      "methodCount": 2,
+      "noSkippedMethods": true,
+      "observations": [
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "math",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "number",
+          "expected": "42",
+          "actual": "6.7",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 13824,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "math_with_bound_prompt",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "number",
+          "expected": "42",
+          "actual": "60",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 8038,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "message",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "Yes, noon works.",
+          "actual": "",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 4613,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "message_negative",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "",
+          "actual": "",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 7050,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "object",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "text",
+          "expected": "red circle",
+          "actual": "Circle, red.",
+          "correct": false,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 5021,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "monster",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "decision",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 8804,
+          "kind": "MULTIMODEL"
+        },
+        {
+          "profile": "local:smolvlm-500m",
+          "id": "empty",
+          "fixtureVersion": "tight-math-and-negative-message-v2",
+          "task": "decision",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "ok": true,
+          "error": "",
+          "elapsedMs": 4837,
+          "kind": "MULTIMODEL"
+        }
+      ],
+      "receiptSha256": "adc33ae43fa311af0a146e37f9d6ed004ffe5f699f2858ae3f73c1d1164da74f"
+    }
+  ],
+  "interpretation": "Protocol/UI/safety test PASS is not answer accuracy PASS. correct uses exact case-insensitive string comparison; alternative correct shape/color wording may be marked false. All shown frames/prompts were owned synthetic fixtures, not private user data.",
+  "retainedFailedAttempts": [
+    {
+      "runId": "0b2dfd14-6f28-4d3e-aa90-f7ea05982f9b",
+      "reason": "UI fixture proxy lacked getVisualBlockEditorAccent; fixed test fixture."
+    },
+    {
+      "runId": "120eacf4-8988-43a5-a85d-696740272d35",
+      "reason": "Initial Qwen image budget 256 timed out on numeric output, plus UI proxy failure; bounded image budget and numeric grammar added; accuracy limitations retained."
+    },
+    {
+      "runId": "9658c4e6-8b8c-4ed3-9589-b33fc2cf26ce",
+      "reason": "LFM license correctly refused; rerun in disposable QA storage without changing user consent."
+    },
+    {
+      "reason": "Arithmetic unit test exposed division-by-zero exception; narrow domain handling added, final 50 methods pass."
+    }
+  ],
+  "unverified": [
+    "Universal 1-3 second inference",
+    "24-hour/OEM matrix",
+    "Real games and arbitrary prompts",
+    "Qwen on physical Samsung",
+    "Equivalent model accuracy in 14 languages",
+    "Full MediaProjection user-macro acceptance",
+    "Website public moderation approval"
+  ]
+}

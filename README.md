@@ -8,23 +8,24 @@ Official optional block packages for **Macro Handler**, the Android automation a
 
 These small `.mhblock` files add optional entries to the app's **Plugins** library. They open the complete existing native block editors in the Visual and Logic workspaces. The engines remain inside the installed Android app; importing a file does not download executable native code or start a macro.
 
-## Local AI Visual Decision — app 1.0.52 preview
+## Local AI Visual Decision — multi-model 1.2.0 preview
 
-[Read the detailed English guide and measured capability limits](docs/local-visual-decision.md)
-before [downloading the separate .mhblock plugin](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/local-vision-v1.1.0/local_visual_decision.mhblock).
-This preview adds offline yes/no region decisions using separately installed,
-verified model data. The model is not embedded in the APK or the descriptor; the
-reviewed CPU runtime is supplied by a compatible app. **Requires the local-vision
-API in app 1.0.52; do not assume app 1.0.51 supports it.**
+[Read the English guide](docs/local-visual-decision.md) before
+[downloading the separate plugin](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/local-vision-v1.2.0/local_visual_decision.mhblock).
+Choose SmolVLM-256M, SmolVLM-500M, LFM2.5-VL-450M or Qwen3-VL-2B per block.
+Decision, bounded Number/Text and model-free Arithmetic OCR tasks share the existing
+answer variable and True/False/Unknown/Error actions. Model weights remain separate;
+the compatible app provides the reviewed CPU runtime. The exact **1.0.52 multitask
+host commit** in the manifest is required; Play 1.0.51 and earlier 1.0.52 builds are
+not automatically compatible.
 
-Actual Samsung/LDPlayer checks recognized coarse shapes and owned monster sprites,
-but missed a single-pixel change and failed correct arithmetic checks. It is not a
-general mathematics solver, tiny-pixel detector or universal game detector. See
-the guide for the separate OCR/Math/variable workflow, licenses, speed samples,
-capture/storage behaviour and True/False/Unknown/Error actions.
-
-The local plugin uses the independent `local-vision-v...` release line. The four
-existing package files and `v1.1.0` downloads below remain unchanged.
+Model execution and answer accuracy are separate. Generative arithmetic failed even
+on simple expressions; explicit Arithmetic OCR passed four controlled Samsung cases.
+Qwen read the owned positive message but was slower, and was tested on LDPlayer, not
+the low-memory physical Samsung. No universal 1–3 second, single-pixel, game or
+24-hour guarantee. LFM has its own conditional license. See
+[expected/actual evidence](local-vision-multimodel-evidence.json) and
+[the preview release](https://github.com/fnzbrn/macrohandler-block-plugins/releases/tag/local-vision-v1.2.0).
 
 ## Packages
 

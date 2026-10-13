@@ -1,7 +1,7 @@
 {
   "packageId": "com.macrohandler.local_visual_decision",
-  "packageVersion": "1.1.0",
-  "releaseTag": "local-vision-v1.1.0",
+  "packageVersion": "1.2.0",
+  "releaseTag": "local-vision-v1.2.0",
   "preview": true,
   "minimumReviewedAppVersion": "1.0.52",
   "minimumReviewedVersionCode": 66,
@@ -10,10 +10,50 @@
   "entry": "local_visual_decision",
   "modelsEmbedded": false,
   "executableEngineDownloadedByPlugin": false,
-  "compatibility": "Requires the reviewed local-vision host API. The descriptor and model data are separate downloads; the compatible app provides the reviewed CPU runtime. Existing blocks retain their selected profile.",
+  "compatibility": "Requires the exact reviewed 1.0.52 multitask host API; version name alone is insufficient. Four reviewed model profiles are separate downloads. One selected model per block, never implicit cloud fallback. Arithmetic OCR uses the existing deterministic companion without VLM weights.",
   "file": "local_visual_decision.mhblock",
-  "bytes": 1066,
-  "sha256": "e255dd15a66c9bba9a52985a2fedaefed7f84e5cf1a88b734d2d2744f37630c5",
+  "bytes": 1396,
+  "sha256": "20542fd7005aa5f47e42f4e0005f60de68ab72252f8ada0ad9e42ee2dd90974d",
   "guide": "docs/local-visual-decision.md",
-  "reviewedHostSourceCommit": "35f5861824d183f32f740e69f48615a153de8237"
+  "reviewedHostSourceCommit": "caa175781ba055331bfb969efa43882a82632e8a",
+  "tasks": [
+    "decision",
+    "number",
+    "text",
+    "arithmetic"
+  ],
+  "outputTokenChoices": [
+    16,
+    32,
+    64,
+    128,
+    256
+  ],
+  "evidence": "local-vision-multimodel-evidence.json",
+  "profiles": [
+    {
+      "provider": "local:smolvlm-256m",
+      "bytes": 278824384,
+      "minimumAvailableMiB": 384,
+      "license": "Apache-2.0"
+    },
+    {
+      "provider": "local:lfm25-vl450m",
+      "bytes": 322126432,
+      "minimumAvailableMiB": 384,
+      "license": "LFM Open License v1.0; conditional open weights, explicit eligibility acceptance"
+    },
+    {
+      "provider": "local:smolvlm-500m",
+      "bytes": 545590272,
+      "minimumAvailableMiB": 768,
+      "license": "Apache-2.0"
+    },
+    {
+      "provider": "local:qwen3-vl2b",
+      "bytes": 1552463168,
+      "minimumAvailableMiB": 2048,
+      "license": "Apache-2.0"
+    }
+  ]
 }
