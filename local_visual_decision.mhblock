@@ -1,0 +1,16 @@
+{
+  "format": "macrohandler.block",
+  "schemaVersion": 2,
+  "id": "com.macrohandler.local_visual_decision",
+  "version": "1.1.0",
+  "name": "Local AI Visual Decision",
+  "description": "Offline visual yes/no region decisions for a compatible Macro Handler 1.0.52 build. Install separate verified SmolVLM-256M (279 MB) or optional LFM2.5-VL-450M fast-profile data (322 MB) in block settings; LFM requires explicit license acceptance. No weights, APK/DEX/native libraries, API key or cloud fallback in this plugin. Existing region/prompt-variable and True/False/Unknown/Error actions are preserved. UI follows 14 app languages; English questions recommended. No calibrated confidence or object coordinates. Not a maths solver, exact pixel detector or universal game detector. Review the English GitHub guide and test on your screen.",
+  "author": "Macro Handler",
+  "inputs": [],
+  "code": "",
+  "native": {
+    "entry": "local_visual_decision",
+    "apiVersion": 1,
+    "source": "app/src/main/java/com/macrohandler/app/host/aiops/vision/LocalVisionRuntime.kt"
+  }
+}

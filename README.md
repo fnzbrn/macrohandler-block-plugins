@@ -8,6 +8,24 @@ Official optional block packages for **Macro Handler**, the Android automation a
 
 These small `.mhblock` files add optional entries to the app's **Plugins** library. They open the complete existing native block editors in the Visual and Logic workspaces. The engines remain inside the installed Android app; importing a file does not download executable native code or start a macro.
 
+## Local AI Visual Decision — app 1.0.52 preview
+
+[Read the detailed English guide and measured capability limits](docs/local-visual-decision.md)
+before [downloading the separate .mhblock plugin](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/local-vision-v1.1.0/local_visual_decision.mhblock).
+This preview adds offline yes/no region decisions using separately installed,
+verified model data. The model is not embedded in the APK or the descriptor; the
+reviewed CPU runtime is supplied by a compatible app. **Requires the local-vision
+API in app 1.0.52; do not assume app 1.0.51 supports it.**
+
+Actual Samsung/LDPlayer checks recognized coarse shapes and owned monster sprites,
+but missed a single-pixel change and failed correct arithmetic checks. It is not a
+general mathematics solver, tiny-pixel detector or universal game detector. See
+the guide for the separate OCR/Math/variable workflow, licenses, speed samples,
+capture/storage behaviour and True/False/Unknown/Error actions.
+
+The local plugin uses the independent `local-vision-v...` release line. The four
+existing package files and `v1.1.0` downloads below remain unchanged.
+
 ## Packages
 
 | Download block | Editor | Setup guide |
@@ -58,6 +76,7 @@ Only the following entry/ID pairs are supported:
 | `navigation_stop` | `com.macrohandler.navigation_stop` |
 | `agent_detect` | `com.macrohandler.agent_detect` |
 | `agent_routine` | `com.macrohandler.agent_routine` |
+| `local_visual_decision` (1.0.52 preview) | `com.macrohandler.local_visual_decision` |
 
 There is no APK, DEX, JAR, shared library, model download, arbitrary native class or executable payload in these four packages. The `author` and `source` fields are descriptive metadata, **not a cryptographic publisher signature**. Download from the publisher's verified release and compare the file digest with `SHA256SUMS` if needed. The checksum is public integrity information, not a secret or access credential.
 

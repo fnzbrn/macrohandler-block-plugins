@@ -1,0 +1,559 @@
+{
+  "date": "2026-10-13",
+  "sourceBase": "4aad2694a90e24e4b7f7dec0c680a48970757723",
+  "scope": "Local Visual Decision package 1.1.0 / reviewed app 1.0.52 / fast LFM profile; explicit capability failures retained.",
+  "package": {
+    "id": "com.macrohandler.local_visual_decision",
+    "version": "1.1.0",
+    "bytes": 1066,
+    "sha256": "e255dd15a66c9bba9a52985a2fedaefed7f84e5cf1a88b734d2d2744f37630c5",
+    "schemaVersion": 2,
+    "nativeApiVersion": 1
+  },
+  "distribution": {
+    "descriptorSeparate": true,
+    "modelWeightsEmbeddedInApkOrPackage": false,
+    "reviewedCpuRuntimeProvidedByApp": true,
+    "remoteExecutableEngineLoaded": false,
+    "previewForApp1052": true
+  },
+  "devices": [
+    {
+      "runId": "18916708-d063-48dc-93a9-04d74e634c32",
+      "model": "SM-A055F",
+      "sdk": "34",
+      "abi": "arm64-v8a",
+      "appSha256": "5a80342d54d7d7966da71b02f802181876f7b4238544e0fae5a2fe425f08691d",
+      "testSha256": "ee55fbc1b13e68c77cdd5921e1ec48c1f176a974960187e00ec358f4c97c6c02",
+      "protocolUiSafetyMethodStatus": "PASS (not a blanket accuracy pass)",
+      "selectors": [
+        "com.macrohandler.app.host.aiops.vision.LocalVisionCapabilityProbeInstrumentedTest#probeArithmeticResolutionPixelsAndOwnedMonsterSprites",
+        "com.macrohandler.app.runtime.LocalVisionMathCompanionInstrumentedTest#actualOcrResultVariableCanBeTypedPastedAndLocatedForTap",
+        "com.macrohandler.app.ui.visualbuilder.LocalVisionPluginUiInstrumentedTest#localPluginHasThemedPaletteCardAndLocalizedOfflineSettings",
+        "com.macrohandler.app.runtime.SystemClipboardPasteInstrumentedTest#caretAndSelectionPastePreserveSurroundingText",
+        "com.macrohandler.app.runtime.SystemClipboardPasteInstrumentedTest#replaceRequiresExplicitMode",
+        "com.macrohandler.app.runtime.SystemClipboardPasteInstrumentedTest#sensitiveFieldIsNeverModified",
+        "com.macrohandler.app.runtime.SystemClipboardPasteInstrumentedTest#nativeLatestPasteUsesTargetClipboardAction"
+      ],
+      "junit": {
+        "accepted": true,
+        "errors": [],
+        "requested": [
+          "com.macrohandler.app.host.aiops.vision.LocalVisionCapabilityProbeInstrumentedTest#probeArithmeticResolutionPixelsAndOwnedMonsterSprites",
+          "com.macrohandler.app.runtime.LocalVisionMathCompanionInstrumentedTest#actualOcrResultVariableCanBeTypedPastedAndLocatedForTap",
+          "com.macrohandler.app.ui.visualbuilder.LocalVisionPluginUiInstrumentedTest#localPluginHasThemedPaletteCardAndLocalizedOfflineSettings",
+          "com.macrohandler.app.runtime.SystemClipboardPasteInstrumentedTest#caretAndSelectionPastePreserveSurroundingText",
+          "com.macrohandler.app.runtime.SystemClipboardPasteInstrumentedTest#replaceRequiresExplicitMode",
+          "com.macrohandler.app.runtime.SystemClipboardPasteInstrumentedTest#sensitiveFieldIsNeverModified",
+          "com.macrohandler.app.runtime.SystemClipboardPasteInstrumentedTest#nativeLatestPasteUsesTargetClipboardAction"
+        ],
+        "started": [
+          "com.macrohandler.app.host.aiops.vision.LocalVisionCapabilityProbeInstrumentedTest#probeArithmeticResolutionPixelsAndOwnedMonsterSprites",
+          "com.macrohandler.app.runtime.LocalVisionMathCompanionInstrumentedTest#actualOcrResultVariableCanBeTypedPastedAndLocatedForTap",
+          "com.macrohandler.app.ui.visualbuilder.LocalVisionPluginUiInstrumentedTest#localPluginHasThemedPaletteCardAndLocalizedOfflineSettings",
+          "com.macrohandler.app.runtime.SystemClipboardPasteInstrumentedTest#caretAndSelectionPastePreserveSurroundingText",
+          "com.macrohandler.app.runtime.SystemClipboardPasteInstrumentedTest#sensitiveFieldIsNeverModified",
+          "com.macrohandler.app.runtime.SystemClipboardPasteInstrumentedTest#nativeLatestPasteUsesTargetClipboardAction",
+          "com.macrohandler.app.runtime.SystemClipboardPasteInstrumentedTest#replaceRequiresExplicitMode"
+        ],
+        "terminals": [
+          "com.macrohandler.app.host.aiops.vision.LocalVisionCapabilityProbeInstrumentedTest#probeArithmeticResolutionPixelsAndOwnedMonsterSprites",
+          "com.macrohandler.app.runtime.LocalVisionMathCompanionInstrumentedTest#actualOcrResultVariableCanBeTypedPastedAndLocatedForTap",
+          "com.macrohandler.app.ui.visualbuilder.LocalVisionPluginUiInstrumentedTest#localPluginHasThemedPaletteCardAndLocalizedOfflineSettings",
+          "com.macrohandler.app.runtime.SystemClipboardPasteInstrumentedTest#caretAndSelectionPastePreserveSurroundingText",
+          "com.macrohandler.app.runtime.SystemClipboardPasteInstrumentedTest#sensitiveFieldIsNeverModified",
+          "com.macrohandler.app.runtime.SystemClipboardPasteInstrumentedTest#nativeLatestPasteUsesTargetClipboardAction",
+          "com.macrohandler.app.runtime.SystemClipboardPasteInstrumentedTest#replaceRequiresExplicitMode"
+        ],
+        "okCounts": [
+          "7"
+        ],
+        "streamOnlyPacketsExcluded": 0,
+        "runnerCodes": [
+          "-1"
+        ]
+      },
+      "fatalOrAnr": false,
+      "receiptSha256": "4ae606d73126408573079776af2b946430fef41a944b5ab2128fe301255a63fd",
+      "logIntervalSha256": "5f94953061fc4b028810e57ce3afb7462770d1d3a5208d4c7a64c900240d4782",
+      "categoryScores": {
+        "arithmetic_yes_no": {
+          "correct": 2,
+          "total": 4
+        },
+        "numeric_output": {
+          "correct": 0,
+          "total": 1
+        },
+        "resolution": {
+          "correct": 3,
+          "total": 3
+        },
+        "pixel_detail": {
+          "correct": 2,
+          "total": 3
+        },
+        "shape_detail": {
+          "correct": 2,
+          "total": 2
+        },
+        "owned_monster_sprite": {
+          "correct": 5,
+          "total": 5
+        }
+      },
+      "observations": [
+        {
+          "id": "math_8_plus_5_right",
+          "category": "arithmetic_yes_no",
+          "expected": "true",
+          "actual": "false",
+          "correct": false,
+          "elapsedMs": 3479,
+          "answer": "No."
+        },
+        {
+          "id": "math_8_plus_5_wrong",
+          "category": "arithmetic_yes_no",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "elapsedMs": 914,
+          "answer": "No."
+        },
+        {
+          "id": "math_6_times_7_right",
+          "category": "arithmetic_yes_no",
+          "expected": "true",
+          "actual": "false",
+          "correct": false,
+          "elapsedMs": 1707,
+          "answer": "No."
+        },
+        {
+          "id": "math_6_times_7_wrong",
+          "category": "arithmetic_yes_no",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "elapsedMs": 918,
+          "answer": "No."
+        },
+        {
+          "id": "numeric_extraction",
+          "category": "numeric_output",
+          "expected": "42",
+          "actual": "Yes",
+          "correct": false,
+          "elapsedMs": 880,
+          "answer": "Yes"
+        },
+        {
+          "id": "circle_192",
+          "category": "resolution",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "elapsedMs": 1100,
+          "answer": "Yes."
+        },
+        {
+          "id": "circle_384",
+          "category": "resolution",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "elapsedMs": 1661,
+          "answer": "Yes."
+        },
+        {
+          "id": "circle_768",
+          "category": "resolution",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "elapsedMs": 1687,
+          "answer": "Yes."
+        },
+        {
+          "id": "one_blue_pixel",
+          "category": "pixel_detail",
+          "expected": "true",
+          "actual": "false",
+          "correct": false,
+          "elapsedMs": 1706,
+          "answer": "No."
+        },
+        {
+          "id": "large_blue_dot",
+          "category": "pixel_detail",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "elapsedMs": 1704,
+          "answer": "Yes."
+        },
+        {
+          "id": "no_blue_dot",
+          "category": "pixel_detail",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "elapsedMs": 1722,
+          "answer": "No."
+        },
+        {
+          "id": "large_black_hole",
+          "category": "shape_detail",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "elapsedMs": 1761,
+          "answer": "Yes."
+        },
+        {
+          "id": "solid_no_hole",
+          "category": "shape_detail",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "elapsedMs": 1739,
+          "answer": "No."
+        },
+        {
+          "id": "large_monster",
+          "category": "owned_monster_sprite",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "elapsedMs": 1663,
+          "answer": "Yes."
+        },
+        {
+          "id": "empty_scene",
+          "category": "owned_monster_sprite",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "elapsedMs": 1663,
+          "answer": "No."
+        },
+        {
+          "id": "human_only",
+          "category": "owned_monster_sprite",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "elapsedMs": 1662,
+          "answer": "No."
+        },
+        {
+          "id": "rock_only",
+          "category": "owned_monster_sprite",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "elapsedMs": 1660,
+          "answer": "No."
+        },
+        {
+          "id": "small_monster",
+          "category": "owned_monster_sprite",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "elapsedMs": 1657,
+          "answer": "Yes."
+        }
+      ]
+    },
+    {
+      "runId": "ec16f30a-1eb4-4c19-9c73-d401ed0818a3",
+      "model": "SH-M24",
+      "sdk": "34",
+      "abi": "x86_64",
+      "appSha256": "5a80342d54d7d7966da71b02f802181876f7b4238544e0fae5a2fe425f08691d",
+      "testSha256": "7ef21cfebf38324824a200ab6ee7263e6ed2d9ff1deb153d18fe998229e88297",
+      "protocolUiSafetyMethodStatus": "PASS (not a blanket accuracy pass)",
+      "selectors": [
+        "com.macrohandler.app.host.aiops.vision.LocalVisionCapabilityProbeInstrumentedTest#probeArithmeticResolutionPixelsAndOwnedMonsterSprites",
+        "com.macrohandler.app.ui.visualbuilder.LocalVisionPluginUiInstrumentedTest#localPluginHasThemedPaletteCardAndLocalizedOfflineSettings"
+      ],
+      "junit": {
+        "accepted": true,
+        "errors": [],
+        "requested": [
+          "com.macrohandler.app.host.aiops.vision.LocalVisionCapabilityProbeInstrumentedTest#probeArithmeticResolutionPixelsAndOwnedMonsterSprites",
+          "com.macrohandler.app.ui.visualbuilder.LocalVisionPluginUiInstrumentedTest#localPluginHasThemedPaletteCardAndLocalizedOfflineSettings"
+        ],
+        "started": [
+          "com.macrohandler.app.host.aiops.vision.LocalVisionCapabilityProbeInstrumentedTest#probeArithmeticResolutionPixelsAndOwnedMonsterSprites",
+          "com.macrohandler.app.ui.visualbuilder.LocalVisionPluginUiInstrumentedTest#localPluginHasThemedPaletteCardAndLocalizedOfflineSettings"
+        ],
+        "terminals": [
+          "com.macrohandler.app.host.aiops.vision.LocalVisionCapabilityProbeInstrumentedTest#probeArithmeticResolutionPixelsAndOwnedMonsterSprites",
+          "com.macrohandler.app.ui.visualbuilder.LocalVisionPluginUiInstrumentedTest#localPluginHasThemedPaletteCardAndLocalizedOfflineSettings"
+        ],
+        "okCounts": [
+          "2"
+        ],
+        "streamOnlyPacketsExcluded": 0,
+        "runnerCodes": [
+          "-1"
+        ]
+      },
+      "fatalOrAnr": false,
+      "receiptSha256": "52943d89972f1424b6983b9b82a1e5e4cc6f3c115853649da7687f23516be1db",
+      "logIntervalSha256": "69ff38587899c8e3c4e09564c8c74a922a85c0a8abd0641eb14697f23e38074b",
+      "categoryScores": {
+        "arithmetic_yes_no": {
+          "correct": 2,
+          "total": 4
+        },
+        "numeric_output": {
+          "correct": 0,
+          "total": 1
+        },
+        "resolution": {
+          "correct": 3,
+          "total": 3
+        },
+        "pixel_detail": {
+          "correct": 2,
+          "total": 3
+        },
+        "shape_detail": {
+          "correct": 2,
+          "total": 2
+        },
+        "owned_monster_sprite": {
+          "correct": 5,
+          "total": 5
+        }
+      },
+      "observations": [
+        {
+          "id": "math_8_plus_5_right",
+          "category": "arithmetic_yes_no",
+          "expected": "true",
+          "actual": "false",
+          "correct": false,
+          "elapsedMs": 1066,
+          "answer": "No."
+        },
+        {
+          "id": "math_8_plus_5_wrong",
+          "category": "arithmetic_yes_no",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "elapsedMs": 395,
+          "answer": "No."
+        },
+        {
+          "id": "math_6_times_7_right",
+          "category": "arithmetic_yes_no",
+          "expected": "true",
+          "actual": "false",
+          "correct": false,
+          "elapsedMs": 783,
+          "answer": "No."
+        },
+        {
+          "id": "math_6_times_7_wrong",
+          "category": "arithmetic_yes_no",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "elapsedMs": 1206,
+          "answer": "No."
+        },
+        {
+          "id": "numeric_extraction",
+          "category": "numeric_output",
+          "expected": "42",
+          "actual": "Yes",
+          "correct": false,
+          "elapsedMs": 1252,
+          "answer": "Yes"
+        },
+        {
+          "id": "circle_192",
+          "category": "resolution",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "elapsedMs": 951,
+          "answer": "Yes."
+        },
+        {
+          "id": "circle_384",
+          "category": "resolution",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "elapsedMs": 751,
+          "answer": "Yes."
+        },
+        {
+          "id": "circle_768",
+          "category": "resolution",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "elapsedMs": 756,
+          "answer": "Yes."
+        },
+        {
+          "id": "one_blue_pixel",
+          "category": "pixel_detail",
+          "expected": "true",
+          "actual": "false",
+          "correct": false,
+          "elapsedMs": 771,
+          "answer": "No."
+        },
+        {
+          "id": "large_blue_dot",
+          "category": "pixel_detail",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "elapsedMs": 795,
+          "answer": "Yes."
+        },
+        {
+          "id": "no_blue_dot",
+          "category": "pixel_detail",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "elapsedMs": 766,
+          "answer": "No."
+        },
+        {
+          "id": "large_black_hole",
+          "category": "shape_detail",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "elapsedMs": 765,
+          "answer": "Yes."
+        },
+        {
+          "id": "solid_no_hole",
+          "category": "shape_detail",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "elapsedMs": 766,
+          "answer": "No."
+        },
+        {
+          "id": "large_monster",
+          "category": "owned_monster_sprite",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "elapsedMs": 740,
+          "answer": "Yes."
+        },
+        {
+          "id": "empty_scene",
+          "category": "owned_monster_sprite",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "elapsedMs": 741,
+          "answer": "No."
+        },
+        {
+          "id": "human_only",
+          "category": "owned_monster_sprite",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "elapsedMs": 761,
+          "answer": "No."
+        },
+        {
+          "id": "rock_only",
+          "category": "owned_monster_sprite",
+          "expected": "false",
+          "actual": "false",
+          "correct": true,
+          "elapsedMs": 761,
+          "answer": "No."
+        },
+        {
+          "id": "small_monster",
+          "category": "owned_monster_sprite",
+          "expected": "true",
+          "actual": "true",
+          "correct": true,
+          "elapsedMs": 749,
+          "answer": "Yes."
+        }
+      ]
+    }
+  ],
+  "unitTests": [
+    {
+      "name": "com.macrohandler.app.automation.TextPastePolicyTest",
+      "tests": 8,
+      "xmlSha256": "ae5517cc0a7fcef319eac7783b5599563308c57126be4516955ce4ab84ec0ec8"
+    },
+    {
+      "name": "com.macrohandler.app.data.SystemClipboardPasteAuthoringTest",
+      "tests": 7,
+      "xmlSha256": "2640fd18d36abbcb615215b69ba1e84893d21d4ad7f02e3b4a0544e527b1b67b"
+    },
+    {
+      "name": "com.macrohandler.app.host.aiops.vision.LocalVisionPluginContractTest",
+      "tests": 5,
+      "xmlSha256": "971b4a04f3f427f2e3ce35de988c01738d83ba75c0360206523e6ce4d9f2967c"
+    }
+  ],
+  "unitTotal": 20,
+  "deterministicMathCompanion": {
+    "status": "PASS on physical Samsung owned high-contrast screen",
+    "path": "Platform screenshot -> actual OCR reads 12 + 30 -> native Lua Num.evalOcrMath -> qa_math_answer=42 -> actual focused input and empty-hint paste -> actual OCR locates 42 -> accessibility tap activates the answer choice.",
+    "vlmSolvedThisExpression": false,
+    "fullMediaProjectionOrUserMacroAcceptanceClaimed": false
+  },
+  "hostFix": {
+    "status": "PASS: unit and real focused-field checks",
+    "rootCause": "Samsung exposes empty EditText hint as node.text and showingHint=true with selection (-1,-1); the old append composer rejected it.",
+    "change": "Accept only explicit Android hint/empty state with both caret values 0 or both -1. Unknown or contradictory selection, sensitive-input and bounds guards retained.",
+    "files": [
+      "app/src/main/java/com/macrohandler/app/automation/TextPastePolicy.kt",
+      "app/src/main/java/com/macrohandler/app/automation/AccessibilityGateway.kt"
+    ]
+  },
+  "retainedFailedAttempts": [
+    {
+      "runId": "352c8689-7199-4a53-9442-dc365a0be25f",
+      "reason": "Fixture JUnit method inferred a non-void return; corrected to Unit."
+    },
+    {
+      "runId": "3b2ab1d4-a890-4dad-96d7-f59888efbe81",
+      "reason": "Real empty-hint append-paste rejection; observed platform flags prove the narrow host fix."
+    },
+    {
+      "runId": "5b801d33-69ef-4ef1-841c-6965569184a5",
+      "reason": "Fixture supplied XYWH to low-level OCR LTRB API; engine correctly rejected invalid_display_region. Corrected fixture, no OCR-engine workaround."
+    }
+  ],
+  "boundaries": [
+    "18 original synthetic raster fixtures per device, English prompts; no commercial-game accuracy certification.",
+    "VLM correct only 2/4 arithmetic checks and 0/1 numeric extraction. It is not offered as a maths solver.",
+    "One-pixel detail missed on both devices; do not substitute it for exact pixel/template/OCR tools.",
+    "Probe completion is not an accuracy acceptance gate. Every expected/actual observation is retained.",
+    "14 UI locales x two themes verified; equivalent model prompt accuracy in 14 languages unproven.",
+    "No general maximum-three-second, cold-integrity, 24-hour, other-OEM or arbitrary-screen guarantee.",
+    "Model license acceptance occurred only in disposable QA contexts; user choices and existing macros preserved.",
+    "Engine screenshots remain memory-only; an explicitly requested owned debug fixture PNG was copied out and removed from device cache.",
+    "No Hosting/Functions/Play deployment or global release-gate closure is implied by package/data publication."
+  ],
+  "reviewedHostSourceCommit": "35f5861824d183f32f740e69f48615a153de8237"
+}
