@@ -8,6 +8,20 @@ Official optional block packages for **Macro Handler**, the Android automation a
 
 These small `.mhblock` files add optional entries to the app's **Plugins** library. They open the complete existing native block editors in the Visual and Logic workspaces. The engines remain inside the installed Android app; importing a file does not download executable native code or start a macro.
 
+## Navigation V2 — mini-map tracking preview
+
+Draw a route on a full-map reference and follow it with the full map closed, using
+the live mini-map for position and heading. The existing full-map mode is retained.
+
+[Download Navigation V2 2.0.0](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/navigation-v2.0.0/Navigation-V2.mhblock)
+· [English setup guide](navigation-v2/README.md)
+· [Türkçe kurulum rehberi](navigation-v2/README.tr.md)
+
+Requires the updated **Navigation native API 2** app, including the October 21
+mini-map setup fixes. Version 1.0.52 alone does not establish compatibility; this
+plugin release does not update the Android app or Google Play. V1 remains available
+unchanged below. V2 has its own folder, manifest, checksums and release tag.
+
 ## Local AI Visual Decision — multi-model 1.2.0 preview
 
 [Read the English guide](docs/local-visual-decision.md) before
@@ -56,7 +70,7 @@ and rejects late answers. Its final build passed 54 JVM tests and 16 device meth
 
 **Agent Routine** opens the existing full Agent editor. Teach, review and approve the routine before running. This is a workflow within the Agent block, not a separate `AGENT_ROUTINE` engine. Ownership, approved-plan and run-consent checks remain enforced by the app.
 
-## Requirements
+## Requirements for the four V1 packages
 
 - A Macro Handler build with **native block packages schema 2 / API 1** support and the four-entry catalog introduced for package release **1.1.0**. The release target is 1.0.51, but **earlier 1.0.51 builds do not support every descriptor**. Version text alone is not a compatibility check.
 - Android permissions and any membership or consent requirements for the actions you configure.
@@ -75,9 +89,9 @@ The default add-block palette omits these optional entries. Existing macros with
 
 Imported entries can be searched and favorited. Removing a library version does not delete blocks already added to a macro. The macro stores the descriptor and native settings; a compatible receiving app does not need a separate library import to open the block. Engine behavior follows the installed app version.
 
-## Package format and integrity
+## V1 package format and integrity
 
-Package version: **1.1.0**. Format: UTF-8 JSON, `format: "macrohandler.block"`, `schemaVersion: 2`, empty `code`, empty `inputs`, and a native descriptor with `apiVersion: 1`.
+V1 package version: **1.1.0**. Format: UTF-8 JSON, `format: "macrohandler.block"`, `schemaVersion: 2`, empty `code`, empty `inputs`, and a native descriptor with `apiVersion: 1`. The separate [Navigation V2 manifest](navigation-v2/manifest.json) specifies version **2.0.0**, schema **2**, native API **2** and the updated host requirement.
 
 Only the following entry/ID pairs are supported:
 
@@ -122,6 +136,7 @@ SDK releases use separate `sdk-v...` tags. The four official native packages kee
 Each guide explains the purpose, requirements and import steps, and includes the versioned file download.
 
 - [Navigation](docs/navigation.md)
+- [Navigation V2](navigation-v2/README.md) · [Türkçe](navigation-v2/README.tr.md)
 - [Navigation Stop](docs/navigation-stop.md)
 - [Agent Detect](docs/agent-detect.md)
 - [Agent Routine](docs/agent-routine.md)

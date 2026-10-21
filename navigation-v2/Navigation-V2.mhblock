@@ -1,0 +1,16 @@
+{
+  "format": "macrohandler.block",
+  "schemaVersion": 2,
+  "id": "com.macrohandler.navigation",
+  "version": "2.0.0",
+  "name": "Navigation V2",
+  "description": "Draw routes on a saved full-map reference and track position and heading from the live mini-map. Includes optional centered-player search and the existing full-map mode. Requires the Navigation native API 2 app update; configure and verify the map, marker and joystick before running.",
+  "author": "MacroHandler",
+  "inputs": [],
+  "code": "",
+  "native": {
+    "entry": "navigation",
+    "apiVersion": 2,
+    "source": "app/src/main/java/com/macrohandler/app/data/navigation/NavigationBlockHandler.kt"
+  }
+}

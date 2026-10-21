@@ -1,0 +1,28 @@
+{
+  "packageId": "com.macrohandler.navigation",
+  "packageVersion": "2.0.0",
+  "releaseTag": "navigation-v2.0.0",
+  "preview": true,
+  "schemaVersion": 2,
+  "nativeApiVersion": 2,
+  "entry": "navigation",
+  "file": "Navigation-V2.mhblock",
+  "bytes": 674,
+  "sha256": "78280391bc7dbb2093ff273dfd8bb4ce2e45c489a3eb2324777ba315145fbb60",
+  "reviewedHostSourceCommit": "29ae77376231963dca000793daa328bbcc6d7a5f",
+  "reviewedHostVersionName": "1.0.52",
+  "reviewedHostVersionCode": 67,
+  "compatibility": "Requires Navigation native API 2 and the October 21 mini-map setup fixes in the reviewed host. App version text alone is insufficient. No Android APK or Google Play update is included.",
+  "executableEngineDownloadedByPlugin": false,
+  "trackingModes": [
+    "full_map",
+    "mini_map"
+  ],
+  "defaultTrackingMode": "mini_map",
+  "defaultControlMode": "heading_feedback",
+  "guide": "README.md",
+  "turkishGuide": "README.tr.md",
+  "legacyRelease": "https://github.com/fnzbrn/macrohandler-block-plugins/releases/tag/v1.1.0",
+  "stopPackage": "https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/v1.1.0/navigation_stop.mhblock",
+  "validationScope": "Latest host region-picker correction: 625 JVM tests and 8 Android UI scenarios, plus manual LDPlayer region preservation. No full-route or physical-device acceptance claim."
+}
