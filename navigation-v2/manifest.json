@@ -1,18 +1,18 @@
 {
   "packageId": "com.macrohandler.navigation",
-  "packageVersion": "2.0.0",
-  "releaseTag": "navigation-v2.0.0",
+  "packageVersion": "2.0.1",
+  "releaseTag": "navigation-v2.0.1",
   "preview": true,
   "schemaVersion": 2,
   "nativeApiVersion": 2,
   "entry": "navigation",
   "file": "Navigation-V2.mhblock",
-  "bytes": 674,
-  "sha256": "78280391bc7dbb2093ff273dfd8bb4ce2e45c489a3eb2324777ba315145fbb60",
-  "reviewedHostSourceCommit": "29ae77376231963dca000793daa328bbcc6d7a5f",
+  "bytes": 750,
+  "sha256": "161ae73a1fe45159be1702ff1fdb57882123101e90c7f327f4a8d7b3d9963e2a",
+  "reviewedHostSourceCommit": "191df9bfa6dfd4db35a35949fb9fff83abd3182a",
   "reviewedHostVersionName": "1.0.52",
   "reviewedHostVersionCode": 67,
-  "compatibility": "Requires Navigation native API 2 and the October 21 mini-map setup fixes in the reviewed host. App version text alone is insufficient. No Android APK or Google Play update is included.",
+  "compatibility": "Requires Navigation native API 2 and the October 22 route management, fixed-camera, joystick-sway, group-selection and diagnostic-panel host updates. Version text alone is insufficient. This descriptor does not update Android or Google Play.",
   "executableEngineDownloadedByPlugin": false,
   "trackingModes": [
     "full_map",
@@ -24,5 +24,14 @@
   "turkishGuide": "README.tr.md",
   "legacyRelease": "https://github.com/fnzbrn/macrohandler-block-plugins/releases/tag/v1.1.0",
   "stopPackage": "https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/v1.1.0/navigation_stop.mhblock",
-  "validationScope": "Latest host region-picker correction: 625 JVM tests and 8 Android UI scenarios, plus manual LDPlayer region preservation. No full-route or physical-device acceptance claim."
+  "validationScope": "680 app + 200 core JVM navigation tests; 60 Android navigation/editor/vision/native callback/archive tests, plus one exact 2.0.1 package import test alongside V1. LDPlayer only. Existing Mobile2 evidence is bounded movement, not end-to-end ARRIVED acceptance.",
+  "validation": {
+    "date": "2026-10-22",
+    "appJvm": 680,
+    "coreJvm": 200,
+    "androidAudit": 60,
+    "exactPackageAndroidImport": 1,
+    "fullGameRouteAccepted": false,
+    "physicalDeviceAccepted": false
+  }
 }

@@ -13,12 +13,12 @@ These small `.mhblock` files add optional entries to the app's **Plugins** libra
 Draw a route on a full-map reference and follow it with the full map closed, using
 the live mini-map for position and heading. The existing full-map mode is retained.
 
-[Download Navigation V2 2.0.0](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/navigation-v2.0.0/Navigation-V2.mhblock)
+[Download Navigation V2 2.0.1](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/navigation-v2.0.1/Navigation-V2.mhblock)
 · [English setup guide](navigation-v2/README.md)
 · [Türkçe kurulum rehberi](navigation-v2/README.tr.md)
 
-Requires the updated **Navigation native API 2** app, including the October 21
-mini-map setup fixes. Version 1.0.52 alone does not establish compatibility; this
+Requires the updated **Navigation native API 2** app, including the October 22
+route management, joystick sway, group selection and diagnostic-panel updates. Version 1.0.52 alone does not establish compatibility; this
 plugin release does not update the Android app or Google Play. V1 remains available
 unchanged below. V2 has its own folder, manifest, checksums and release tag.
 

@@ -1,46 +1,74 @@
-# Navigation V2 · 2.0.0
+# Navigation V2 · 2.0.1
 
-Draw a route on a saved full-map reference, close the full map, and follow that route using the live mini-map. Full-map tracking remains available as a separate mode.
+Draw routes on a saved full-map reference and follow them with either the full map or the live mini-map. The updated Android host supplies the route editor, terrain/marker matching and joystick control.
 
-[Download Navigation-V2.mhblock](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/navigation-v2.0.0/Navigation-V2.mhblock) · [Türkçe kurulum rehberi](README.tr.md) · [Release](https://github.com/fnzbrn/macrohandler-block-plugins/releases/tag/navigation-v2.0.0)
+[Download Navigation-V2.mhblock](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/navigation-v2.0.1/Navigation-V2.mhblock) · [Türkçe rehber](README.tr.md) · [Release](https://github.com/fnzbrn/macrohandler-block-plugins/releases/tag/navigation-v2.0.1)
 
-## Compatibility
+## Compatibility and update
 
-This preview requires a Macro Handler build supporting **Navigation native API 2**, including the October 21 mini-map setup fixes. The reviewed host source is recorded in [manifest.json](manifest.json). App version **1.0.52 alone is not sufficient**: older builds with that version may lack these changes. This release does not publish an APK or update Google Play.
+Use a host with **Navigation native API 2** and the October 22 route management, joystick sway and group-selector updates. The exact reviewed Android source commit is in [manifest.json](manifest.json). **Version name 1.0.52 alone is insufficient**: earlier builds with that name may lack these changes.
 
-The small `.mhblock` file opens the navigation engine already installed in the app. It contains no executable engine, map, route, credentials or game assets. An older app rejects the API 2 descriptor and asks for an update.
+This small descriptor opens the engine already installed in Macro Handler. It does not download executable engine code, include game assets or update the Android app/Google Play. Reimporting a plugin cannot add host features to an older app.
 
-## Import
+1. Keep a copy of the current macro. Download **Navigation-V2.mhblock**, not GitHub's source ZIP.
+2. In the No-Code or Logic workspace choose **Add Block → Import block (.mhblock)**.
+3. Review **Navigation V2 / 2.0.1** and add it from **Plugins**.
+4. The package ID remains **com.macrohandler.navigation**. The new library version coexists with V1 and V2 2.0.0; importing it does not rewrite existing macro blocks or saved setups.
+5. [Navigation Stop](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/v1.1.0/navigation_stop.mhblock) remains a separate, unchanged block.
 
-1. Download **Navigation-V2.mhblock** to the Android device. Do not import GitHub's source ZIP.
-2. Open a copy of your macro in the No-Code or Logic workspace.
-3. Select **Add Block → Import block (.mhblock)** and review **Navigation V2 / 2.0.0**.
-4. Add **Navigation V2** from **Plugins**. Its native package ID remains `com.macrohandler.navigation`; version 2.0.0 is a separate library version. Importing it does not rewrite existing V1 blocks or their settings.
-5. If needed, import the unchanged [Navigation Stop](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/v1.1.0/navigation_stop.mhblock) separately.
+Screen capture and accessibility permissions are required for the actions used. Existing membership and runtime authorization rules still apply.
 
-## Mini-map setup
+## Source-specific setup
 
-1. Select **Mini-map tracking** on the block card, then open **Map and route setup**. New V2 blocks start in mini-map mode with heading feedback.
-2. Open **Reference map** and save/select the full map. Capture the terrain without window borders or buttons.
-3. Draw and save the route on that reference using the app's route editor.
-4. Close the game's full map. Open **Mini-map setup**, select the visible mini-map region and confirm it. Continue in the same setup panel; teach the player's mini-map marker and its heading tip separately. Confirm the setup before leaving it.
-5. Choose the circular/rectangular shape. Use the edge margin and exclusion areas to omit the frame and fixed controls. Choose **Fixed at center** if the player arrow stays centered; otherwise choose the moving-player option.
-6. Configure the joystick. Verify position and heading with the non-moving observation test before trying a short live route.
+Choose **Full-map tracking** or **Mini-map tracking** on the block, then **Map and route setup**. Only that source's controls appear. Switching sources preserves their saved settings; calibration is source-specific.
 
-Only the selected source's setup controls are shown. **Full-map tracking** retains its live map region and marker setup. Switching sources preserves saved map, route and source settings; measured calibration is not transferred between sources.
+For mini-map tracking:
+1. Save/select a clean full-map reference containing terrain, without window borders or buttons.
+2. Open **Routes and points → New route**. Draw and save the route on that reference.
+3. Close the game's full map and select the visible mini-map region. Use circular/rectangular shape, edge margin and exclusion regions to omit decoration.
+4. Teach the mini-map player arrow separately, marking its position anchor and heading tip.
+5. If the arrow stays centered, choose **Fixed at center**; otherwise choose moving-player mode. Centered mode still requires a real visible arrow.
+6. Set the joystick region. Start with **Observe without moving** and verify position/heading before a short route.
 
-## Tracking behavior
+Reference and mini-map pixel dimensions do not need to match: scale and rotation are estimated from common terrain. Sparse, repeated or occluded terrain can still prevent a reliable match.
 
-- Position comes from matching mini-map terrain to the reference map. Heading comes from the taught player arrow, with rotation mapped into reference coordinates.
-- Centered-player mode narrows marker search; it still requires a visible marker and a valid terrain match.
-- Missing, ambiguous or stale observations release movement. Brief heading uncertainty may recover through bounded fresh observations; unresolved uncertainty stops navigation.
-- Navigation follows the drawn route. It does not discover walls or automatically plan detours around obstacles.
-- Keep screen geometry consistent with setup. Occlusion, repeated terrain, sparse detail or a different map style may prevent localization.
+## Saved routes
 
-## Verification and V1
+The main route panel contains **New route**, **Route preview**, and **Selected route**, vertically. Preview sends no movement.
 
-The current host's mini-map region return fix passed 625 JVM tests and 8 Android UI scenarios, including region/exclusion save/cancel, persisted reopening, marker selection and both tracking modes in portrait/landscape. Normal LDPlayer use also retained the selected region. These checks do not establish a full-route acceptance test for every game or a physical-device result. Earlier live-game evidence covered only a bounded route segment; test your own route on your device.
+Selected route opens a scrollable list with route names, point counts and waypoint-group counts. Tap a row, then **Select route** to apply it. Cancel keeps the previous selection. Edit opens the selected route; Delete requires confirmation naming that route.
 
-The original [V1 release v1.1.0](https://github.com/fnzbrn/macrohandler-block-plugins/releases/tag/v1.1.0), its files and checksums remain unchanged. Keep your V1 macro copy for rollback. Both versions use the engine supplied by the installed application.
+Deletion removes only the selected route and its waypoint assignments. It preserves the map, calibration, other routes and macro groups. If the active route is deleted, no other route is silently selected. Other blocks referencing it need explicit reselection. Stale edits cannot overwrite newer profile revisions. Up to 32 routes can be saved per setup.
 
-Compare downloads against [SHA256SUMS](SHA256SUMS). The repository's MIT license covers these descriptors and guides, not the Android engine or third-party game assets.
+## Camera, joystick and diagnostics
+
+For a camera that does not automatically follow the character, choose **Movement mode and settings → Live heading settings → Fixed camera**. Specify the reference-map direction produced by joystick UP: right 0°, down 90°, left 180°, up 270°. A horizontal reflection option is available. Reconfigure after changing camera orientation; no single angle is correct for every game.
+
+Optional **Joystick sway** is off by default. Strength is 0–15° and period is 400–10000 ms. It varies the admitted direction without increasing joystick radius. Direction learning, route correction and arrival approach take priority; calibration is unaffected.
+
+Observation and calibration use a persistent draggable diagnostic panel with its stop action inside the panel. Observation does not send joystick movement. Calibration does move the joystick: use a clear area.
+
+## Groups in both tracking modes
+
+Create the group in the same macro first. **Group calls** shows named choices:
+- **Waypoint action**: select a route point, group and radius, then save. Navigation releases the joystick, runs the group and reacquires a fresh position before continuing.
+- **Periodic group / pause mode**: stop, run the chosen group, reacquire and resume.
+- **Periodic group / observation mode**: steering continues while the chosen group performs observation work. Callbacks run one at a time; fresh samples replace queued old samples. This is not unrestricted concurrent screen control. Use pause mode for touch actions, or explicitly stop navigation and confirm release first.
+
+Missing groups, failed callbacks, missing maps and unresolved headings are not treated as success.
+
+## Verification and limits
+
+The October 22 audit freshly passed **680 app + 200 core JVM navigation tests** and **60 Android instrumented tests** on LDPlayer, covering both sources, native image matching, callback execution, stop cleanup, route persistence, archive transfer and editor lifecycle. Additional exact-package import verification is recorded in the manifest.
+
+These are scoped automated tests, not full-route acceptance on every game or a physical-device certification. Earlier real-game traces demonstrated bounded movement, not a completed end-to-end route. Low-detail terrain remains a localization limitation. If measured position uncertainty exceeds the authored arrival radius, arrival is refused; do not weaken recognition gates or silently widen the user's route tolerances.
+
+Navigation follows an authored route. It does not discover walls or plan obstacle detours. Missing, ambiguous or stale evidence stops/releases movement. Test your own reference, marker, camera, joystick and short route before longer use.
+
+## Release notes and rollback
+
+**2.0.1 (2026-10-22):** refreshed descriptor and compatibility record; documented saved-route selection/deletion, fixed camera, joystick sway, shared group choices and the persistent diagnostic panel. Exact-package import is checked alongside V1. These features are supplied by the reviewed host; the descriptor is not an engine patch.
+
+[V2 2.0.0](https://github.com/fnzbrn/macrohandler-block-plugins/releases/tag/navigation-v2.0.0) and [V1 v1.1.0](https://github.com/fnzbrn/macrohandler-block-plugins/releases/tag/v1.1.0) retain their original files. Keep your old macro copy. Compare downloads with [SHA256SUMS](SHA256SUMS).
+
+The repository MIT license covers descriptors and guides, not the Android engine or third-party game assets.
