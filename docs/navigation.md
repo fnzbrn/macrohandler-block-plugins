@@ -4,7 +4,9 @@ Manage route and joystick steps in an editable block.
 
 [Download navigation.mhblock (v1.1.0)](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/v1.1.0/navigation.mhblock)
 
-The link above downloads the actual **.mhblock** file. Do not import the repository source ZIP into Macro Handler.
+**Import this file: `navigation.mhblock`.** Use the download link above. GitHub’s **Download raw file** button on this guide saves a `.md` document, which cannot be imported as a plugin. Do not rename a guide to `.mhblock`. If you downloaded a ZIP bundle, extract it and select the individual `.mhblock` file.
+
+**Türkçe:** Eklenti için yukarıdaki **Download navigation.mhblock** bağlantısını kullanın. GitHub’ın sayfayı indirme düğmesi bu kılavuzu `.md` olarak kaydeder; bu dosya eklenti değildir. Makronuzda **Blok ekle → İçe aktar** yolundan `navigation.mhblock` dosyasını seçin.
 
 ## What it does
 

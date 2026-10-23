@@ -4,7 +4,9 @@ Prepare and run taught routines from the Agent editor.
 
 [Download agent_routine.mhblock (v1.1.0)](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/v1.1.0/agent_routine.mhblock)
 
-The link above downloads the actual **.mhblock** file. Do not import the repository source ZIP into Macro Handler.
+**Import this file: `agent_routine.mhblock`.** Use the download link above. GitHub’s **Download raw file** button on this guide saves a `.md` document, which cannot be imported as a plugin. Do not rename a guide to `.mhblock`. If you downloaded a ZIP bundle, extract it and select the individual `.mhblock` file.
+
+**Türkçe:** Eklenti için yukarıdaki **Download agent_routine.mhblock** bağlantısını kullanın. GitHub’ın sayfayı indirme düğmesi bu kılavuzu `.md` olarak kaydeder; bu dosya eklenti değildir. Makronuzda **Blok ekle → İçe aktar** yolundan `agent_routine.mhblock` dosyasını seçin.
 
 ## What it does
 

@@ -1,5 +1,11 @@
 # MacroHandler Block Plugins
 
+## Download the plugin file / Eklenti dosyasını indirin
+
+Choose a **.mhblock** package from the links below. GitHub’s **Download raw file** button on a guide downloads the **.md/README guide**, not the plugin. Do not rename it to .mhblock. Extract ZIP bundles before selecting an individual package in **Add block → Import**.
+
+**Türkçe:** Aşağıdaki bağlantılardan **.mhblock** dosyasını indirin. GitHub’ın kılavuz sayfasındaki indirme düğmesi **.md/README** belgesini kaydeder; bu dosya eklenti olarak içe aktarılamaz. ZIP indirdiyseniz önce çıkarın. Uygulamada **Blok ekle → İçe aktar** bölümünden .mhblock dosyasını seçin.
+
 Official optional block packages for **Macro Handler**, the Android automation and macro development app.
 
 - [Macro Handler website](https://macrohandler.com)

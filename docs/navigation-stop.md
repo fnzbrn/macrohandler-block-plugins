@@ -4,7 +4,9 @@ End active navigation and continue after the joystick is released.
 
 [Download navigation_stop.mhblock (v1.1.0)](https://github.com/fnzbrn/macrohandler-block-plugins/releases/download/v1.1.0/navigation_stop.mhblock)
 
-The link above downloads the actual **.mhblock** file. Do not import the repository source ZIP into Macro Handler.
+**Import this file: `navigation_stop.mhblock`.** Use the download link above. GitHub’s **Download raw file** button on this guide saves a `.md` document, which cannot be imported as a plugin. Do not rename a guide to `.mhblock`. If you downloaded a ZIP bundle, extract it and select the individual `.mhblock` file.
+
+**Türkçe:** Eklenti için yukarıdaki **Download navigation_stop.mhblock** bağlantısını kullanın. GitHub’ın sayfayı indirme düğmesi bu kılavuzu `.md` olarak kaydeder; bu dosya eklenti değildir. Makronuzda **Blok ekle → İçe aktar** yolundan `navigation_stop.mhblock` dosyasını seçin.
 
 ## What it does
 
